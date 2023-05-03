@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logotipo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="formularioRegistro.css">
+    <title>Registro - TU MOTO</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../img/logotipo.png" alt="logo marca"></a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="../motocicletas/motocicletas.html" class="nav-item nav-link">Motocicletas</a> 
+                    <a href="../accesorios/accesorios.html" class="nav-item nav-link">Accesorios</a>
+                    <a href="../contacto/contacto.html" class="nav-item nav-link">Contacto</a>
+                    <a href="../novedades/novedades.html" class="nav-item nav-link">Novedades</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link active"><i class="bi bi-person"></i></i></i></a>
+                    <a href="../cesta/cesta.html" class="nav-item nav-link "><i class="bi bi-bag"></i></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <video id="video-background" autoplay muted loop>
+            <source src="video/videoFondoRegistro.mp4" type="video/mp4">
+        </video>
+        <div class="formulario">
+            <div class="cabecera">
+                <h1>Formulario Cliente</h1>
+                <p>El registro es obligatorio para ver la página</p>
+            </div>
+            <form action="/action_page.php">
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="nombre" maxlength="50" size="25" placeholder="Nombre" name="nombre">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="apellidos" maxlength="50" size="25" placeholder="Apellidos" name="apellidos">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="email" class="form-control" id="email" maxlength="50" size="50" placeholder="Correo electrónico" name="email">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="telefono" maxlength="9" size="9" pattern="[0-9]{9}" placeholder="Teléfono" name="telefono">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="direccion" maxlength="50" size="25" placeholder="Dirección" name="direccion">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="contrasenia"  minlength="8" size="25" placeholder="Contraseña" name="contrasenia">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="contrasenia" minlength="8" size="25" placeholder="Repetir Contraseña" name="contrasenia">
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember">Acepto la política de privacidad.
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember">Deseo recibir correos con información y novedades.
+                    </label>
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+        </div>
+    </main>
+    <footer class="text-center text-lg-start">
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">TU MOTO</h6>
+                        <p>Tu Moto es un destacado concesionario de motos y accesorios que se ha ganado una excelente reputación en la industria. Con un enfoque en la profesionalidad y la calidad de sus productos.</p> 
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">horario apertura</h6>
+                        <p>Lunes a Viernes:</p>
+                        <p>9:00-14:00 / 17:00-20:30</p>
+                        <p>Sábado y Domingo:</p>
+                        <p>Cerrado</p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">redes sociales</h6>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-facebook"></i>@motospacosevilla</a></p>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-envelope"></i>motospaco@gmail.com</a></p>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-instagram"></i>motospacosevilla</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p>Sevilla,SV 41001, ES</p>
+                        <p>info@example.com</p>
+                        <p>+ 34 696 41 41 41</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="logoFooter" class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.679);">
+            <img  src="../img/logotipo.png" alt="Logo de la marca">
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+

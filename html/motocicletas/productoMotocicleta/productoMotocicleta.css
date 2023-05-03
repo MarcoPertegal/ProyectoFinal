@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+.navbar-brand img{
+    width: 50px;
+}
+body nav{
+    background-color: rgb(78, 3, 3);
+}
+.navbar-nav{
+    font-size: 15pt;
+}
+.navbar-nav a{
+    color: rgb(213, 212, 212);
+}
+.navbar-nav a:hover{
+    color: white;
+}
+.navbar-nav .active {
+    color: rgb(178, 162, 72) !important;
+}
+footer{
+    background-color: rgb(78, 3, 3);
+    color: white;
+}
+#logoFooter img{
+    width: 95px;
+    padding: 0px;
+}
+footer h6{
+    padding-top: 20px;
+}
+.row{
+    width: 100%;
+}
+.row img{
+    width: 120%;
+    margin: 0 auto;
+}
+main{
+    margin-top: 180px;
+    margin-bottom: 180px;
+}
+.btn{
+    background-color: rgb(178, 162, 72);
+    color: white;
+    width: 95%;
+    height: 10%;
+}
+.btn:hover{
+    background-color: rgb(78, 3, 3);
+    color: white;
+}
+.color img{
+    width: 150px;
+}
+.color a{
+    text-decoration: none;
+    color: black;
+}
+.color p{
+    text-align: center;
+}
+.row h3{
+    font-size: 30pt;
+    color: rgb(78, 3, 3);
+    margin-bottom: 5%;
+}
+#imagenMoto{
+    margin: 0px !important;
+    padding: 0px;
+}

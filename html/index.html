@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logotipo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Inicio - TU MOTO</title>
+</head>
+<body>
+            <!-- Como cambio la tipografía -->
+            <!-- HACER LOS FORMULARIOS CON UN MODEL DE W3SCHOOL, ¿abria que meter la tarjeta y eso para el formulario de compra? -->
+            <!-- Ver como hacer para que el que entre en la página no pueda hacer nada más que ver el index hasta que se registre -->
+            <!-- No harían falta links desde cesta a registro porejemplo porque no se puede acceder a cesta sin antes registrarse -->
+            <!-- Hacer coockies y validar/comprobar formularios con javaScript -->
+            <!-- Mirar los ejercicios de ejemplo de rafa de javascript viene validacion de formularios -->
+            <!-- PONER AL PRINCIPIO DE LA PÁGINA SOBRE EL VIDEO BIENVENIDO A TU MOTO CON EL LOGO Y UN SLOGAN -->
+            <!-- Los formularios deben tener varios tipos de campos, como se hacen viene en el tutorial de thymeleaf-->
+            <!-- Los tipos de moto, scooter, supersport, etc o de producto ropa, etc se puede hacer con un select o radiobuton para el formulario -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="img/logotipo.png" alt="logo marca"></a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="motocicletas/motocicletas.html" class="nav-item nav-link">Motocicletas</a> 
+                    <a href="accesorios/accesorios.html" class="nav-item nav-link">Accesorios</a>
+                    <a href="contacto/contacto.html" class="nav-item nav-link">Contacto</a>
+                    <a href="novedades/novedades.html" class="nav-item nav-link">Novedades</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="formularioRegistro/formularioRegistro.html" class="nav-item nav-link"><i class="bi bi-person"></i></i></i></a>
+                    <a href="cesta/cesta.html" class="nav-item nav-link"><i class="bi bi-bag"></i></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <video width="100%" autoplay muted loop>
+            <source src="video/videoIndex.mp4" type="video/mp4">
+        </video>
+
+        <div class="cajaDeTexto">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-8">
+                    <p><span>¿Quieres probar tu moto antes de comprarla?</span></p>
+                    <p>Puedes solicitar una prueba de tu moto en nuestro concesionario para asegurarte de que todo funciona como pensabas. 
+                    Mandanos un correo electrónico con tus datos y lo tramitaremos al instante.</p>
+                    <button type="button" class="btn">Solicitar Prueba</button>
+                </div>
+            </div>
+        </div>
+        <div class="cajaDeTexto">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-8">
+                    <p><span>Nuevos Articulos</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 mx-auto">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="img/imgPrueba.jpg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">R1M</h4>
+                                <p class="card-text">Yamaha participó en su primer Gran Premio del Campeonato del Mundo hace 60 años y, durante este tiempo,
+                                    las motos de competición de la fábrica han cosechado más de 500 victorias en GGPP. La última R1M ha sido creada haciendo 
+                                    uso de toda la experiencia adquirida en los campeonatos del mundo de MotoGP y SBK, lo que la convierte en la Yamaha de 
+                                    serie más sofisticada jamás fabricada.</p>
+                                <a href="#" class="btn">See Profile</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 mx-auto">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="img/imgPrueba.jpg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">R1M</h4>
+                                <p class="card-text">Yamaha participó en su primer Gran Premio del Campeonato del Mundo hace 60 años y, durante este tiempo,
+                                    las motos de competición de la fábrica han cosechado más de 500 victorias en GGPP. La última R1M ha sido creada haciendo 
+                                    uso de toda la experiencia adquirida en los campeonatos del mundo de MotoGP y SBK, lo que la convierte en la Yamaha de 
+                                    serie más sofisticada jamás fabricada.</p>
+                                <a href="#" class="btn">See Profile</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-4 mx-auto">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="img/imgPrueba.jpg" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">R1M</h4>
+                                <p class="card-text">Yamaha participó en su primer Gran Premio del Campeonato del Mundo hace 60 años y, durante este tiempo,
+                                    las motos de competición de la fábrica han cosechado más de 500 victorias en GGPP. La última R1M ha sido creada haciendo 
+                                    uso de toda la experiencia adquirida en los campeonatos del mundo de MotoGP y SBK, lo que la convierte en la Yamaha de 
+                                    serie más sofisticada jamás fabricada.</p>
+                                <a href="#" class="btn">See Profile</a>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </main>
+    
+    <footer class="text-center text-lg-start">
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">TU MOTO</h6>
+                        <p>Tu Moto es un destacado concesionario de motos y accesorios que se ha ganado una excelente reputación en la industria. Con un enfoque en la profesionalidad y la calidad de sus productos.</p> 
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">horario apertura</h6>
+                        <p>Lunes a Viernes:</p>
+                        <p>9:00-14:00 / 17:00-20:30</p>
+                        <p>Sábado y Domingo:</p>
+                        <p>Cerrado</p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">redes sociales</h6>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-facebook"></i>@motospacosevilla</a></p>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-envelope"></i>motospaco@gmail.com</a></p>
+                        <p><a href="#!" class="text-reset"><i class="bi bi-instagram"></i>motospacosevilla</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-2 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p>Sevilla,SV 41001, ES</p>
+                        <p>info@example.com</p>
+                        <p>+ 34 696 41 41 41</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="logoFooter" class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.679);">
+            <img  src="img/logotipo.png" alt="Logo de la marca">
+        </div>
+    </footer>
+</body>
+</html>

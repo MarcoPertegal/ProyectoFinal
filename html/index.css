@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+.navbar-brand img{
+    width: 50px;
+}
+body nav{
+    background-color: rgb(78, 3, 3);
+}
+.navbar-nav{
+    font-size: 15pt;
+}
+.navbar-nav a{
+    color: rgb(213, 212, 212);
+}
+.navbar-nav a:hover{
+    color: white;
+}
+.navbar-nav .active {
+    color: rgb(178, 162, 72) !important;
+}
+footer{
+    background-color: rgb(78, 3, 3);
+    color: white;
+}
+#logoFooter img{
+    width: 90px;
+    padding: 0px;
+}
+footer h6{
+    padding-top: 20px;
+}
+main .cajaDeTexto .row{
+    text-align: center;
+    font-size: 20pt;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.cajaDeTexto div span{
+    font-size: 30pt;
+    color: rgb(78, 3, 3);
+}
+.btn{
+    background-color: rgb(178, 162, 72);
+    color: white;
+}
+.btn:hover{
+    background-color: rgb(78, 3, 3);
+    color: white;
+}
+.row{
+    width: 100%;
+}
