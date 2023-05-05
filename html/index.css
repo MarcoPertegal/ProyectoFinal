@@ -30,6 +30,9 @@ footer{
 footer h6{
     padding-top: 20px;
 }
+main{
+    margin-top: -20px;
+}
 main .cajaDeTexto .row{
     text-align: center;
     font-size: 20pt;
