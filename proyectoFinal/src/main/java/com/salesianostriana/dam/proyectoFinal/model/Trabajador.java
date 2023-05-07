@@ -3,6 +3,7 @@ package com.salesianostriana.dam.proyectoFinal.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,6 +27,7 @@ public class Trabajador {
 	
 	@Id
 	@GeneratedValue
+	@Column(name="id_trabajador")
 	private Long id;
 	
 	private String nombre, apellidos, dni, direccion, municipio, telefono;//preguntar si telefono es int o String pq en la base de datos es un char
