@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.proyectoFinal.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,6 @@ public class Cliente {
 	@Id
 	@GeneratedValue
 	@Column(name="id_cliente")//Cuando da el wrning de la tabla es porque no cioncide el nombre del atributo con el del instert into de la tabla
-	
 	private Long id;
 	
 	private String nombre, apellidos, email, telefono, direccion, contrasenia, municipio, dni;
