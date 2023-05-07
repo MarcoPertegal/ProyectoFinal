@@ -151,16 +151,16 @@ footer h6{
     padding-right: 7%;
 }
 /*formularioCliente*/
-#mainFormularioCliente{
+#mainFormulario{
     margin-top: 70px;
 }
-#mainFormularioCliente .formulario{
+#mainFormulario .formulario{
     margin-top: 100px !important;
     margin: 0 auto;
     width: 50%;
 
 }
-#mainFormularioCliente .cabecera{
+#mainFormulario .cabecera{
     background-color: rgb(178, 162, 72);
     padding-left: 6%;
     padding-right: 6%;
@@ -170,10 +170,10 @@ footer h6{
     border-top-left-radius: 10px;
     color: white;
 }
-#mainFormularioCliente .cabecera p{
+#mainFormulario .cabecera p{
     margin-bottom: 0px;
 }
-#mainFormularioCliente form{
+#mainFormulario form{
     background-color: rgba(0, 0, 0, 0.8);
     padding-right: 10%;
     padding-left: 10%;
@@ -182,24 +182,28 @@ footer h6{
     border-bottom-right-radius:  10px;
     border-bottom-left-radius: 10px;
 }
-#mainFormularioCliente .btn{
+#mainFormulario .btn{
     width: 100%;
     height: 50px;
     background-color: rgb(178, 162, 72);
     color: white;
 }
-#mainFormularioCliente .btn:hover{
+#mainFormulario .btn:hover{
     background-color: rgb(78, 3, 3);
     color: white;
 }
-#mainFormularioCliente #video-background {
+#mainFormulario #video-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 1550px;
     z-index: -1;
 }
-#mainFormularioCliente label{
+#mainFormulario label{
     color: white;
+}
+#mainFormulario .form-control:focus{
+          border: 2px solid rgb(78, 3, 3);
+          outline: none;
 }
 

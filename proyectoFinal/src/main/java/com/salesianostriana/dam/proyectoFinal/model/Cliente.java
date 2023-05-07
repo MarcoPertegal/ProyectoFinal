@@ -36,6 +36,6 @@ public class Cliente {
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy="trabajador", fetch = FetchType.EAGER)
 	@Builder.Default
-	private List<Venta> listaVentas = new ArrayList();
+	private List<Venta> listaVentas = new ArrayList<>();
 	
 }
