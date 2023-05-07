@@ -13,39 +13,39 @@ import com.salesianostriana.dam.proyectoFinal.service.base.BaseServiceImpl;
 public class ClienteService extends BaseServiceImpl<Cliente, Long, ClienteRepositorio>{
 
 	@Override
+	public List<Cliente> findAll() {
+		// TODO Auto-generated method stub
+		return super.findAll();
+	}
+
+	@Override
 	public Optional<Cliente> findById(Long id) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return super.findById(id);
 	}
 
 	@Override
 	public Cliente save(Cliente t) {
 		// TODO Auto-generated method stub
-		return null;
+		return super.save(t);
 	}
 
 	@Override
 	public Cliente edit(Cliente t) {
 		// TODO Auto-generated method stub
-		return null;
+		return super.edit(t);
 	}
 
 	@Override
 	public void delete(Cliente t) {
 		// TODO Auto-generated method stub
-		
+		super.delete(t);
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Cliente> findAll() {
-		// TODO Auto-generated method stub
-		return super.findAll();
+		super.deleteById(id);
 	}
 
 	@Override
@@ -77,6 +77,8 @@ public class ClienteService extends BaseServiceImpl<Cliente, Long, ClienteReposi
 		// TODO Auto-generated method stub
 		super.finalize();
 	}
+
+	
 	
 
 }
