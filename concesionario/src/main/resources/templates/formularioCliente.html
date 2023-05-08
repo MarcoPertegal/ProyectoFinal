@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Formulario Cliente - TU MOTO</title>
+</head>
+<body>
+
+    <nav th:replace="~{fragmentos/nav::nav}"></nav>    
+    
+    <main id="mainFormulario">
+        <video id="video-background" autoplay muted loop>
+            <source src="../video/videoFondoRegistro.mp4" type="video/mp4">
+        </video>
+        <div class="formulario">
+            <div class="cabecera">
+                <h1>Formulario Cliente</h1>
+                <p>El registro es obligatorio para ver la página</p>
+            </div>
+            <form action="/action_page.php">
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="nombre" maxlength="50" placeholder="Nombre" name="nombre">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="apellidos" maxlength="50" placeholder="Apellidos" name="apellidos">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="username" class="form-control" id="email" maxlength="50" placeholder="Correo electrónico" name="email">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="telefono" maxlength="9" pattern="[0-9]{9}" placeholder="Teléfono" name="telefono">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="text" class="form-control" id="direccion" maxlength="50" placeholder="Dirección" name="direccion">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="contrasenia"  minlength="8" placeholder="Contraseña" name="contrasenia">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input type="password" class="form-control" id="RepetirContrasenia" minlength="8" placeholder="Repetir Contraseña" name="RepetirContrasenia">
+                </div>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+        </div>
+    </main>
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Trabajador - TU MOTO</title>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/nav::nav}"></nav>    
+    <main>
+        <div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				<div class="pull-right">
+					<a href="#" 
+						class="btn btn-primary">Nuevo producto</a>
+
+				</div>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Imagen</th>
+							<th>Nombre</th>
+							<th>Pvp</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+<!-- Se explica también en la parte de Categorías. En este caso:
+
+Pintamos el cuerpo de la tabla mediante un bucle th:each, 
+iremos recorriendo la lista productos 
+(así hay que llamarle en el método index 
+del Productocontroller model.addAttribute("productos", productoService.findAll());
+
+Para cada producto, pintamos la imagen (se explica en ejemplos de sintaxis básica) 
+o una por defecto si el producto concreto no tienen imagen, 
+el nombre del producto y el pvp usando la forma de formatear que
+se explica en ejemplos anteriores (basta con escribir #numbers y llamar al método
+formatCurrency que significa algo así como formatear en moneda.
+En este caso, editar y borrar no hacen nada, se verá en otro ejemplo.
+ -->
+						<tr th:each="trabajador : ${listaTrabajadores}">
+							<td><img th:src="${not (#strings.isEmpty(producto.imagen))} 
+								              ? ${producto.imagen} : 'http://placehold.it/48x48'"
+								class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td th:text="${producto.nombre}"></td>
+							<td th:text="${#numbers.formatCurrency(producto.pvp)}"></td>
+							<td class="operaciones"><a href="#"								
+								class="btn btn-primary">Editar</a>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#delete-modal">Borrar</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Borrar producto</h4>
+				</div>
+				<div class="modal-body">
+					<p>¿Está usted seguro de borrar este producto?</p>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<a href="#" class="btn btn-danger">Sí</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+    </main>
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>
