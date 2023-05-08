@@ -44,7 +44,7 @@ En este caso, editar y borrar no hacen nada, se verá en otro ejemplo.
 							<td><img th:src="${not (#strings.isEmpty(producto.imagen))} 
 								              ? ${producto.imagen} : 'http://placehold.it/48x48'"
 								class="img-responsive icono-categoria" alt="imagen" /></td>
-							<td th:text="${producto.nombre}"></td>
+							<td th:text="${listaTrabajadores.nombre}"></td>
 							<td th:text="${#numbers.formatCurrency(producto.pvp)}"></td>
 							<td class="operaciones"><a href="#"								
 								class="btn btn-primary">Editar</a>
