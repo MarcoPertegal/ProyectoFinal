@@ -18,10 +18,13 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Imagen</th>
 							<th>Nombre</th>
-							<th>Pvp</th>
-							<th>Operaciones</th>
+							<th>Apellidos</th>
+							<th>Dni</th>
+							<th>Direccion</th>
+							<th>Municipio</th>
+							<th>Teléfono</th>
+							<th>Sueldo</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -41,16 +44,13 @@ formatCurrency que significa algo así como formatear en moneda.
 En este caso, editar y borrar no hacen nada, se verá en otro ejemplo.
  -->
 						<tr th:each="trabajador : ${listaTrabajadores}">
-							<td><img th:src="${not (#strings.isEmpty(producto.imagen))} 
-								              ? ${producto.imagen} : 'http://placehold.it/48x48'"
-								class="img-responsive icono-categoria" alt="imagen" /></td>
-							<td th:text="${listaTrabajadores.nombre}"></td>
-							<td th:text="${#numbers.formatCurrency(producto.pvp)}"></td>
-							<td class="operaciones"><a href="#"								
-								class="btn btn-primary">Editar</a>
-								<button type="button" class="btn btn-danger" data-toggle="modal"
-									data-target="#delete-modal">Borrar</button>
-							</td>
+							<td th:text="${trabajador.nombre}"></td>
+							<td th:text="${trabajador.apellidos}"></td>
+							<td th:text="${trabajador.dni}"></td>
+							<td th:text="${trabajador.direccion}"></td>
+							<td th:text="${trabajador.municipio}"></td>
+							<td th:text="${trabajador.telefono}"></td>
+							<td th:text="${trabajador.sueldo}"></td>
 						</tr>
 					</tbody>
 				</table>

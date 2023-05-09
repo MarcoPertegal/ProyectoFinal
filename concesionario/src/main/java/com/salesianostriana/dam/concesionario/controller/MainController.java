@@ -25,4 +25,5 @@ public class MainController {
 	public String formularioCliente() {
 		return "formularioCliente";
 	}
+	
 }
