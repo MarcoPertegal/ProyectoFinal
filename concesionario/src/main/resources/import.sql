@@ -1,4 +1,3 @@
-
 insert into articulo (id_articulo, precio_base) values (1, 20000);
 insert into articulo (id_articulo, precio_base) values (2, 13000);
 insert into articulo (id_articulo, precio_base) values (3, 15000);
