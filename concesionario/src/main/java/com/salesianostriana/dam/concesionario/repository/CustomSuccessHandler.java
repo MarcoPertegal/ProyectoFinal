@@ -1,0 +1,70 @@
+package com.salesianostriana.dam.concesionario.repository;
+
+import java.io.IOException;
+
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
+import org.springframework.stereotype.Component;
+
+@Component
+public interface CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
+	
+	RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+	
+	@Override
+	protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+			throws IOException {
+		String targetUrl = determineTargetUrl(authentication);
+
+		if (response.isCommitted()) {
+			System.out.println("Can't redirect");
+			return;
+		}
+
+		redirectStrategy.sendRedirect(request, response, targetUrl);
+	}
+	
+	protected String determineTargetUrlString(Authentication authentication) {
+		String url = "";
+
+		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+		List<String> roles = new ArrayList<String>();
+
+		for (GrantedAuthority a : authorities) {
+			roles.add(a.getAuthority());
+		}
+
+		if (isAdmin(roles)) {
+			url = "/admin/";
+		} else if (isUser(roles)) {
+			url = "/";
+		} else {
+			url = "/acceso-denegado";
+		}
+
+		return url;
+	}
+
+	private boolean isUser(List<String> roles) {
+		if (roles.contains("ROLE_USER")) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isAdmin(List<String> roles) {
+		if (roles.contains("ROLE_ADMIN")) {
+			return true;
+		}
+		return false;
+	}
+
+	public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
+		this.redirectStrategy = redirectStrategy;
+	}
+
+	protected RedirectStrategy getRedirectStrategy() {
+		return redirectStrategy;
+	}
+}

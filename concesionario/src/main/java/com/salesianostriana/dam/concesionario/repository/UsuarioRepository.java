@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.salesianostriana.dam.concesionario.model.Usuario;
 
 @Component
-public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
 	Optional<Usuario> findFirstByUsername(String username);
 
