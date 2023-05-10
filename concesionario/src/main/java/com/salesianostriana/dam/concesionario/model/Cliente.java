@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +23,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name="CLIENTE")
 public class Cliente {
 	@Id
 	@GeneratedValue
-	@Column(name="id_cliente")//Cuando da el wrning de la tabla es porque no cioncide el nombre del atributo con el del instert into de la tabla
+	@Column(name="ID_CLIENTE")//Cuando da el wrning de la tabla es porque no cioncide el nombre del atributo con el del instert into de la tabla
 	private Long id;
 	
 	private String nombre, apellidos, email, telefono, direccion, contrasenia, municipio, dni;

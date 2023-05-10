@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +23,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "TRABAJADOR")
 public class Trabajador {
 	@Id
 	@GeneratedValue
-	@Column(name="id_trabajador")
+	@Column(name="ID_TRABAJADOR")
 	private Long id;
 	
 	private String nombre, apellidos, dni, direccion, municipio, telefono;//preguntar si telefono es int o String pq en la base de datos es un char
