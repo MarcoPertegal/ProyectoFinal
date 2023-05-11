@@ -1,14 +1,19 @@
 package com.salesianostriana.dam.concesionario.model;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,17 +27,52 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Cliente {
+public class Cliente implements UserDetails {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
-	@Column(name="id_cliente")//Cuando da el wrning de la tabla es porque no cioncide el nombre del atributo con el del instert into de la tabla
 	private Long id;
 	
-	private String nombre, apellidos, email, telefono, direccion, contrasenia, municipio, dni;
+	private String nombre, apellidos, email, telefono, direccion, municipio, dni, username, password;
+	
+	private boolean admin;
+	
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="trabajador", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="cliente", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	@Builder.Default
 	private List<Venta> listaVentas = new ArrayList<>();
+	
+	
+	
+	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		String role = "ROLE_";
+		role += (admin) ? "ADMIN" : "USER";
+		return List.of(new SimpleGrantedAuthority(role));
+	}	
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 }

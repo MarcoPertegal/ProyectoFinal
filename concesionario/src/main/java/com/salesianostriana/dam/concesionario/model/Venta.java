@@ -37,13 +37,37 @@ public class Venta {
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime fecha;
 	
-	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name= "fk_venta_trabajador"))
-	private Trabajador trabajador;
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name= "fk_venta_cliente"))
 	private Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name= "fk_venta_trabajador"))
+	private Trabajador trabajador;
+	
+	//asociación con cliente
+	public void addToCliente(Cliente cliente) {
+		this.cliente = cliente;
+		cliente.getListaVentas().add(this);
+	}
+	
+	public void removeFromCliente(Cliente cliente) {
+		cliente.getListaVentas().remove(this);
+		this.cliente = null;
+	}
+	
+	
+	//asociación con trabajador
+	public void addToTrabajdor(Trabajador trabajador) {
+		this.trabajador = trabajador;
+		trabajador.getListaVentas().add(this);
+	}
+		
+	public void removeFromTrabajador(Trabajador trabajador) {
+		trabajador.getListaVentas().remove(this);
+		this.trabajador = null;		
+	}
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
@@ -55,28 +79,7 @@ public class Venta {
 				orphanRemoval = true
 		)
 	private List<LineaVenta> listaLineaVenta = new ArrayList<>();
-	
-	//MEtodos HELPER PARA LA ASOCICCIÓN CON TRABAJADOR
-	public void addToTrabajador(Trabajador trabajador) {
-		this.trabajador= trabajador;
-		trabajador.getListaVentas().add(this);
-	}
 		
-	public void removeFromTrabajador(Trabajador trabajador) {
-		trabajador.getListaVentas().remove(this);
-		this.trabajador = null;
-	}
-		
-		///CON CLIENTE
-	public void addToCliente(Cliente cliente) {
-		this.cliente = cliente;
-		cliente.getListaVentas().add(this);
-	}
-		
-	public void removeFromCliente(Cliente cliente) {
-		trabajador.getListaVentas().remove(this);
-		this.cliente = null;
-	}
 	
 	//Metodos Helper asociación de composición lineaVenta y venta
 	public void addLineaVenta(LineaVenta lV) {
@@ -84,7 +87,7 @@ public class Venta {
 		this.listaLineaVenta.add(lV);
 	}
 	
-	public void removeAsiento(LineaVenta lV) {
+	public void removeLineaVenta(LineaVenta lV) {
 		this.listaLineaVenta.remove(lV);
 		lV.setVenta(null);
 		
