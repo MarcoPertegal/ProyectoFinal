@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -34,12 +35,13 @@ import lombok.ToString;
 @Table(name = "VENTA")
 public class Venta {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name= "ID_VENTA")
 	private Long id;
 	
 	@DateTimeFormat(iso = ISO.DATE_TIME)
 	private LocalDateTime fecha;
+	
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name= "fk_venta_trabajador"))
@@ -59,17 +61,6 @@ public class Venta {
 				orphanRemoval = true
 		)
 	private List<LineaVenta> listaLineaVenta = new ArrayList<>();
-	
-	//MEtodos HELPER PARA LA ASOCICCIÓN CON TRABAJADOR
-	public void addToTrabajador(Trabajador trabajador) {
-		this.trabajador= trabajador;
-		trabajador.getListaVentas().add(this);
-	}
-		
-	public void removeFromTrabajador(Trabajador trabajador) {
-		trabajador.getListaVentas().remove(this);
-		this.trabajador = null;
-	}
 		
 		///CON CLIENTE
 	public void addToCliente(Cliente cliente) {
@@ -78,8 +69,19 @@ public class Venta {
 	}
 		
 	public void removeFromCliente(Cliente cliente) {
-		trabajador.getListaVentas().remove(this);
+		cliente.getListaVentas().remove(this);
 		this.cliente = null;
+	}
+	
+	//COn trabajador
+	public void addToTrabajador(Trabajador trabajador) {
+		this.trabajador= trabajador;
+		trabajador.getListaVentas().add(this);
+	}
+		
+	public void removeFromTrabajador(Trabajador trabajador) {
+		trabajador.getListaVentas().remove(this);
+		this.trabajador = null;
 	}
 	
 	//Metodos Helper asociación de composición lineaVenta y venta

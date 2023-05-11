@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -19,52 +18,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig {
 	
-	
-	private final UserDetailsService userDetailsService;
-	private final CustomSuccessHandler customSuccessHandler;
-	
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-
-	}
-
-	protected void configure(HttpSecurity http) throws Exception {
-
-		// @formatter:off
-		
-		http
-		.authorizeRequests()
-		.antMatchers("/css/**","/js/**","/files/**", "/h2-console/**").permitAll()
-			.antMatchers("/admin/**").hasAnyRole("ADMIN")
-			.anyRequest().authenticated()
-			.and()
-		.formLogin()
-			.loginPage("/login")
-			.permitAll()
-			.successHandler(customSuccessHandler)
-			.and()
-		.logout()
-			.logoutUrl("/logout")
-			.permitAll()
-			.and()
-		.exceptionHandling()
-			.accessDeniedPage("/acceso-denegado");
-	
-		// Añadimos esto para poder seguir accediendo a la consola de H2
-		// con Spring Security habilitado.
-		http.csrf().disable();
-		http.headers().frameOptions().disable();
-		
-		// @formatter:on
-
-	}
-	//SEGURIDAD SIN HERENCIA
-	/*
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
 	
@@ -104,7 +57,7 @@ public class SecurityConfig {
 		http.headers().frameOptions().disable();
 		
 		return http.build();
-	}*/
+	}
 	
 	
 	

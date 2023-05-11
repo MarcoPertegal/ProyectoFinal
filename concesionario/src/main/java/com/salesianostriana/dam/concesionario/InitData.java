@@ -7,8 +7,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.salesianostriana.dam.concesionario.model.Usuario;
-import com.salesianostriana.dam.concesionario.repository.UsuarioRepository;
+import com.salesianostriana.dam.concesionario.model.Cliente;
+import com.salesianostriana.dam.concesionario.repository.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,26 +16,26 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class InitData {
 	
-	private final UsuarioRepository repo;
+	private final ClienteRepository repo;
 	private final PasswordEncoder passwordEncoder;
 	
 	@PostConstruct
 	public void init() {
 		
-		Usuario usuario = Usuario.builder()
+		Cliente cliente = Cliente.builder()
 				.admin(false)
 				.username("user")
 				//.password("1234")
 				.password(passwordEncoder.encode("1234"))
 				.build();
 		
-		Usuario admin = Usuario.builder()
+		Cliente admin = Cliente.builder()
 				.admin(true)
 				.username("admin")
 				.password(passwordEncoder.encode("admin"))
 				.build();
 		
-		repo.saveAll(List.of(usuario, admin));
+		repo.saveAll(List.of(cliente, admin));
 		
 		
 	}
