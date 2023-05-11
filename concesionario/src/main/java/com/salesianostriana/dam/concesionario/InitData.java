@@ -1,3 +1,4 @@
+/*
 package com.salesianostriana.dam.concesionario;
 
 import java.util.List;
@@ -24,6 +25,13 @@ public class InitData {
 		
 		Cliente cliente = Cliente.builder()
 				.admin(false)
+				.apellidos("Ramiro Fernandez")
+				.direccion("Avenida de la Paz")
+				.dni("49193684C")
+				.email("fernandez@gmail.com")
+				.municipio("Sevilla")
+				.nombre("Francisco")
+				.telefono("677552354")
 				.username("user")
 				//.password("1234")
 				.password(passwordEncoder.encode("1234"))
@@ -31,6 +39,13 @@ public class InitData {
 		
 		Cliente admin = Cliente.builder()
 				.admin(true)
+				.apellidos("Prieto Sanchez")
+				.direccion("Virgen de Lujan")
+				.dni("49193054C")
+				.email("prieto@gmail.com")
+				.municipio("Sevilla")
+				.nombre("Endika")
+				.telefono("677554564")
 				.username("admin")
 				.password(passwordEncoder.encode("admin"))
 				.build();
@@ -40,3 +55,4 @@ public class InitData {
 		
 	}
 }
+*/

@@ -5,12 +5,24 @@
 </head>
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
-    <main>
-	    <form method="POST" action="#" th:action="@{/login}">
-			<input type="text" id="username" name="username" placeholder="Username" required autofocus> 
-			<input type="password" name="password" id="password" placeholder="Password" required>
-			<input type="submit" name="enviar" value="Enviar" />
-		</form>
+    <main id="mainFormulario">
+        <video id="video-background" autoplay muted loop>
+            <source src="../video/videoFondoRegistro.mp4" type="video/mp4">
+        </video>
+        <div class="formulario">
+            <div class="cabecera">
+                <h1>Formulario Cliente</h1>
+            </div>
+            <form method="POST" action="#" th:action="@{/login}">
+				<div class="mb-3 mt-3">
+					<input type="text" class="form-control" id="username" name="username" placeholder="Username" required autofocus> 
+				</div>
+                <div class="mb-3 mt-3">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
     </main>
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
 </body>
