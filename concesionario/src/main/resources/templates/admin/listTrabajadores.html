@@ -10,11 +10,9 @@
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10">
 				<div class="pull-right">
-					<a href="#" 
-						class="btn btn-primary">Nuevo producto</a>
-
+					<a href="formTrabajadores.html" th:href="@{/admin/nuevo/}"
+						class="btn btn-primary">Nuevo Trabajador</a>
 				</div>
-
 				<table class="table">
 					<thead>
 						<tr>
@@ -28,21 +26,6 @@
 						</tr>
 					</thead>
 					<tbody>
-					
-<!-- Se explica también en la parte de Categorías. En este caso:
-
-Pintamos el cuerpo de la tabla mediante un bucle th:each, 
-iremos recorriendo la lista productos 
-(así hay que llamarle en el método index 
-del Productocontroller model.addAttribute("productos", productoService.findAll());
-
-Para cada producto, pintamos la imagen (se explica en ejemplos de sintaxis básica) 
-o una por defecto si el producto concreto no tienen imagen, 
-el nombre del producto y el pvp usando la forma de formatear que
-se explica en ejemplos anteriores (basta con escribir #numbers y llamar al método
-formatCurrency que significa algo así como formatear en moneda.
-En este caso, editar y borrar no hacen nada, se verá en otro ejemplo.
- -->
 						<tr th:each="trabajador : ${listaTrabajadores}">
 							<td th:text="${trabajador.nombre}"></td>
 							<td th:text="${trabajador.apellidos}"></td>
