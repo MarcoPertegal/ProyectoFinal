@@ -27,9 +27,10 @@ public class MainController {
 	}
 	
 	@GetMapping("/login")
-	public String formularioRegistro() {
+	public String formularioLogin() {
 		return "login";
 	}
+	
 	
 	
 }

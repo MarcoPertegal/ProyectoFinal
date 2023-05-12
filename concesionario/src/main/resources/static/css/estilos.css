@@ -22,6 +22,7 @@ body nav{
 footer{
     background-color: rgb(78, 3, 3);
     color: white;
+    margin-bottom: 0px;
 }
 #logoFooter img{
     width: 90px;
