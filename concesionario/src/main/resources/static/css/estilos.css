@@ -158,14 +158,14 @@ main{
     margin-top: 70px;
 }
 #mainFormulario .formulario{
-    margin-top: 100px !important;
+    margin-top: 150px !important;
     margin: 0 auto;
     width: 50%;
-
+    margin-bottom: 150px !important;
 }
 #mainFormulario .cabecera{
     background-color: rgb(178, 162, 72);
-    padding-left: 6%;
+    padding-left: 9%;
     padding-right: 6%;
     padding-bottom: 3%;
     padding-top: 3%;

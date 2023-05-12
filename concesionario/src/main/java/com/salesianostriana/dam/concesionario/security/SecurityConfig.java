@@ -51,8 +51,13 @@ public class SecurityConfig {
 		.formLogin()
 			.loginPage("/login")
 			.defaultSuccessUrl("/")
-			.permitAll();
-		
+			.permitAll()
+			.and()
+		.logout()
+			.logoutUrl("/login?logout")
+			.invalidateHttpSession(true)
+			.deleteCookies("JSESSIONID")
+			.permitAll();	
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
 		
