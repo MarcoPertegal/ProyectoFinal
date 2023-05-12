@@ -18,7 +18,7 @@
                     <a href="accesorios/accesorios.html" class="nav-item nav-link">Accesorios</a>
                     <a href="../contacto.html" th:href="@{/contacto}" class="nav-item nav-link">Contacto</a>
                     <a href="../novedades.html " th:href="@{/novedades}" class="nav-item nav-link">Novedades</a>
-                    <a href="../admin/list-trabajadores.html" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin/list-trabajadores}" class="nav-item nav-link">Trabajadores</a>
+                    <a href="../admin/listTrabajadores.html" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin/listTrabajadores}" class="nav-item nav-link">Trabajadores</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <a href="../login.html" th:href="@{/login}" sec:authorize="!isAuthenticated()" class="nav-item nav-link"><i class="bi bi-person"></i></a>
