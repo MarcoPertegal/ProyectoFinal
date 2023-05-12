@@ -26,4 +26,10 @@ public class MainController {
 		return "formularioCliente";
 	}
 	
+	@GetMapping("/login")
+	public String formularioRegistro() {
+		return "login";
+	}
+	
+	
 }

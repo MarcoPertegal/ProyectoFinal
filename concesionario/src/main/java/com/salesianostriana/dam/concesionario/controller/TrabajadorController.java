@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.salesianostriana.dam.concesionario.service.TrabajadorService;
 
 @Controller
-@RequestMapping("/admin/trabajador")
+@RequestMapping("/admin/CRUDTrabajadores")
 public class TrabajadorController {
 	
 	@Autowired
@@ -20,4 +20,5 @@ public class TrabajadorController {
 		model.addAttribute("listaTrabajadores", trabajadorService.findAll());
 		return "admin/CRUDTrabajadores";
 	}
+	
 }
