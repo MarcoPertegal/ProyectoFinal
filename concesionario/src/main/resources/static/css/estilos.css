@@ -40,9 +40,6 @@ main{
 }
 
 /*index*/
-#mainIndex{
-    margin-top: -20px;
-}
 #mainIndex .cajaDeTexto .row{
     text-align: center;
     font-size: 20pt;
@@ -155,9 +152,6 @@ main{
     padding-right: 7%;
 }
 /*formularios*/
-#mainFormulario{
-    margin-top: 70px;
-}
 #mainFormulario .formulario{
     margin-top: 150px !important;
     margin: 0 auto;

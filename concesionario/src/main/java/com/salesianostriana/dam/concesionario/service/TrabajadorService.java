@@ -18,29 +18,25 @@ public class TrabajadorService extends BaseServiceImpl<Trabajador, Long, Trabaja
 	@Autowired
 	private TrabajadorRepository repositorio;
 	
+	
 	public List<Trabajador> findAll() {
 		return repositorio.findAll();
 	}
+	
 	
 	public Trabajador save(Trabajador trabajador) {
 		return repositorio.save(trabajador);
 	}
 	
+	
 	public Optional<Trabajador> findById(Long id) {
 		return repositorio.findById(id);
 	}
-	/*
+	
 	@Override
 	public void delete(Trabajador t) {
-		// TODO Auto-generated method stub
-		super.delete(t);
+	    Optional<Trabajador> result = findById(t.getId());
+	    result.ifPresent(trabajador -> repositorio.delete(trabajador));
 	}
-	*/
-	/*
-	public Trabajador delete(Trabajador trabajador) {
-		Trabajador result = findById(trabajador.getId());
-		repositorio.delete(result);
-
-	}*/	
 	
 }
