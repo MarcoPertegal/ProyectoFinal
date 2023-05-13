@@ -5,12 +5,12 @@
 </head>
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
-    <main>
+    <main class="mb-5">
         <div class="container">
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10">
 				<div class="pull-right">
-					<a href="formTrabajadores.html" th:href="@{/admin/nuevo/}"
+					<a href="formTrabajador.html" th:href="@{/admin/trabajador/nuevo/}"
 						class="btn btn-primary">Nuevo Trabajador</a>
 				</div>
 				<table class="table">
@@ -34,30 +34,16 @@
 							<td th:text="${trabajador.municipio}"></td>
 							<td th:text="${trabajador.telefono}"></td>
 							<td th:text="${trabajador.sueldo}"></td>
+							
+							<td><a href="#" th:href="@{/admin/trabajador/editar/{id}(id=${trabajador.id})}"
+								class="btn btn-primary">Editar</a>
+							
+							<td><a href="#" th:href="@{/admin/trabajador/borrar/{id}(id=${trabajador.id})}"
+								class="btn btn-danger">Borrar</a>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">Borrar producto</h4>
-				</div>
-				<div class="modal-body">
-					<p>¿Está usted seguro de borrar este producto?</p>
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-					<a href="#" class="btn btn-danger">Sí</a>
-				</div>
-			</div>
-
 		</div>
 	</div>
     </main>
