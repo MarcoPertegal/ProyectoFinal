@@ -11,7 +11,7 @@
 			<div class="col-md-offset-1 col-md-10">
 				<div class="pull-right">
 					<a href="formTrabajador.html" th:href="@{/admin/trabajador/nuevo/}"
-						class="btn btn-primary">Nuevo Trabajador</a>
+						class="btn">Nuevo Trabajador</a>
 				</div>
 				<table class="table">
 					<thead>
@@ -36,10 +36,10 @@
 							<td th:text="${trabajador.sueldo}"></td>
 							
 							<td><a href="#" th:href="@{/admin/trabajador/editar/{id}(id=${trabajador.id})}"
-								class="btn btn-primary">Editar</a>
+								class="btn btn-custom">Editar</a>
 							
 							<td><a href="#" th:href="@{/admin/trabajador/borrar/{id}(id=${trabajador.id})}"
-								class="btn btn-danger">Borrar</a>
+								class="btn">Borrar</a>
 						</tr>
 					</tbody>
 				</table>

@@ -38,7 +38,22 @@ footer h6{
 main{
 	margin-top: 70px;
 }
-
+.btn{
+	background-color: rgb(178, 162, 72);
+    color: white;
+}
+.btn:hover{
+    background-color: rgb(130, 119, 55);
+    color: white;
+}
+.btn-custom{
+	background-color: rgb(78, 3, 3);
+	color: white;
+}
+.btn-custom:hover{
+	background-color: rgb(51, 2, 2);
+	color: white;
+}
 /*index*/
 #mainIndex .cajaDeTexto .row{
     text-align: center;
@@ -52,10 +67,6 @@ main{
 }
 #mainIndex .btn{
     background-color: rgb(178, 162, 72);
-    color: white;
-}
-#mainIndex .btn:hover{
-    background-color: rgb(78, 3, 3);
     color: white;
 }
 
@@ -156,7 +167,7 @@ main{
     margin-top: 150px !important;
     margin: 0 auto;
     width: 50%;
-    margin-bottom: 150px !important;
+    margin-bottom: 100px !important;
 }
 #mainFormulario .cabecera{
     background-color: rgb(178, 162, 72);
@@ -183,12 +194,6 @@ main{
 #mainFormulario .btn{
     width: 100%;
     height: 50px;
-    background-color: rgb(178, 162, 72);
-    color: white;
-}
-#mainFormulario .btn:hover{
-    background-color: rgb(78, 3, 3);
-    color: white;
 }
 #mainFormulario #video-background {
     position: fixed;
@@ -198,8 +203,8 @@ main{
     z-index: -1;
 }
 #mainFormulario .form-control:focus{
-          border: 2px solid rgb(78, 3, 3);
-          outline: none;
+    border: 2px solid rgb(78, 3, 3);
+    outline: none;
 }
 .listado{
 	margin-top: 120px;
