@@ -201,4 +201,8 @@ main{
           border: 2px solid rgb(78, 3, 3);
           outline: none;
 }
+.listado{
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
 
