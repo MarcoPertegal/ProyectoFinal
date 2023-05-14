@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>Formulario Trabajador - TU MOTO</title>
 </head>
-<body>
+<body class="bg-dark">
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
     <main id="mainFormulario">
         <div class="formulario">
@@ -11,8 +11,6 @@
                 <h1>Formulario Trabajador</h1>
             </div>
             <form method="post" action="#" th:action="@{/admin/trabajador/nuevo/submit}" th:object="${trabajador}">
-				
-				<span th:text="${trabajador.id} ? 'Editar' : 'Nuevo'"></span>
 				
 				<input type="hidden" th:field="*{id}" id="id" />
 				
