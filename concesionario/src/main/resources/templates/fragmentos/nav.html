@@ -14,11 +14,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="motocicletas/motocicletas.html"       sec:authorize="isAuthenticated()" class="nav-item nav-link">Motocicletas</a> 
+                    <a href="motocicletas.html" th:href="@{/motocicletas}" sec:authorize="isAuthenticated()" class="nav-item nav-link">Motocicletas</a> 
                     <a href="accesorios/accesorios.html"           sec:authorize="isAuthenticated()" class="nav-item nav-link">Accesorios</a>
                     <a href="../../contacto.html" th:href="@{/contacto}" sec:authorize="isAuthenticated()" class="nav-item nav-link">Contacto</a>
                     <a href="../../novedades.html" th:href="@{/novedades}" sec:authorize="isAuthenticated()" class="nav-item nav-link">Novedades</a>
-                    <a href="../../admin/listTrabajador.html" th:href="@{/admin/trabajador/}" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item nav-link">Trabajadores</a>
+                	<a href="../../admin/indexAdmin.html" th:href="@{/admin/indexAdmin}" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item nav-link">OPCIONES ADMIN</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <a href="../../login.html" th:href="@{/login}" sec:authorize="!isAuthenticated()" class="nav-item nav-link"><i class="bi bi-person"></i></a>

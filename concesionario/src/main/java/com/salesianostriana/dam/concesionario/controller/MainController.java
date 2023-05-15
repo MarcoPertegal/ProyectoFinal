@@ -30,6 +30,14 @@ public class MainController {
 	public String formularioLogin() {
 		return "login";
 	}
+	@GetMapping("/admin/indexAdmin")
+	public String indexAdmin() {
+		return "/admin/indexAdmin";
+	}
+	@GetMapping("/motocicletas")
+	public String motocicletas() {
+		return "/motocicletas";
+	}
 	
 	
 	

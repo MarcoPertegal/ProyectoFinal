@@ -1,26 +1,23 @@
 package com.salesianostriana.dam.concesionario.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class Accesorio{
-	
-	@Id
-	@GeneratedValue
-	private long id;
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class Accesorio extends Producto{
 	
 	private String caracteristicas;
+	
+	public Accesorio(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
+			List<LineaVenta> listaLineaVenta, String caracteristicas) {
+		super(id, marca, nombre, categoria, descripcion, precioBase, listaLineaVenta);
+		this.caracteristicas = caracteristicas;
+	}
 	
 	
 }

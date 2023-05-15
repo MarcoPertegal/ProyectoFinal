@@ -22,7 +22,7 @@ public class TrabajadorController {
 	private TrabajadorService trabajadorService;
 	
 	@GetMapping("/")
-	public String index(Model model) {
+	public String listTrabajador(Model model) {
 		model.addAttribute("listaTrabajadores", trabajadorService.findAll());
 		return "admin/listTrabajador";
 	}

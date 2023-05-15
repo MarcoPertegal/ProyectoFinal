@@ -1,25 +1,27 @@
 package com.salesianostriana.dam.concesionario.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-@Data
+
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class Motocicleta {
-	
-	@Id
-	@GeneratedValue
-	private Long id;
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class Motocicleta extends Producto{
 	
 	private double peso, cilindrada;
+	
+	public Motocicleta(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
+			List<LineaVenta> listaLineaVenta, double peso, double cilindrada) {
+		super(id, marca, nombre, categoria, descripcion, precioBase, listaLineaVenta);
+		this.peso = peso;
+		this.cilindrada = cilindrada;
+	}
+
+	
 	
 }
