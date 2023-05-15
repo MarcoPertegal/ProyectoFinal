@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Accesorio {
+public class Accesorio{
 	
 	@Id
 	@GeneratedValue

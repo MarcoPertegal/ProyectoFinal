@@ -4,6 +4,8 @@ insert into cliente (id, nombre, apellidos, email, telefono, password, direccion
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '70949233M', 'Calle de la Estrella', 'JUAN NICASIO', 'ARDUENGO', '602 34 92 01', ' Loja');
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '15340247M', 'Calle del Mar', 'LEANDRO', 'BLANCA', '622 68 34 42', ' Almería');
 
-
+insert into venta (id, fecha, cliente_id, trabajador_id) values (1, '2021-02-12 00:00:00', 1, 1);
+insert into venta (id, fecha, cliente_id, trabajador_id) values (2, '2023-04-10 00:00:00', 2, 1);
+insert into venta (id, fecha, cliente_id, trabajador_id) values (3, '2023-08-29 00:00:00', 2, 2);
 
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1050;
