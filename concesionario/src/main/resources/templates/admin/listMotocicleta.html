@@ -10,35 +10,40 @@
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10">
 				<div class="pull-right">
-					<a href="formTrabajador.html" th:href="@{/admin/trabajador/nuevo/}"
-						class="btn">Nuevo Trabajador</a>
+					<a href="formMotocicleta.html" th:href="@{/motocicleta/admin/nuevo}"
+						class="btn">Nueva Motocicleta</a>
 				</div>
 				<table class="table">
 					<thead>
 						<tr>
+							<th>Imagen</th>
 							<th>Nombre</th>
-							<th>Apellidos</th>
-							<th>Dni</th>
-							<th>Direccion</th>
-							<th>Municipio</th>
-							<th>Teléfono</th>
-							<th>Sueldo</th>
+							<th>Marca</th>
+							<th>Categoría</th>
+							<th>Descripción</th>
+							<th>Precio Base</th>
+							<th>Peso</th>
+							<th>Cilindrada</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="trabajador : ${listaTrabajadores}">
-							<td th:text="${trabajador.nombre}"></td>
-							<td th:text="${trabajador.apellidos}"></td>
-							<td th:text="${trabajador.dni}"></td>
-							<td th:text="${trabajador.direccion}"></td>
-							<td th:text="${trabajador.municipio}"></td>
-							<td th:text="${trabajador.telefono}"></td>
-							<td th:text="${trabajador.sueldo}"></td>
+						<tr th:each="motocicleta : ${listaMotocicletas}">
+							<td><img
+								th:src="${not (#strings.isEmpty(motocicleta.imagen))} 
+								              ? ${motocicleta.imagen} : 'http://placehold.it/48x48'"
+								class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td th:text="${motocicleta.nombre}"></td>
+							<td th:text="${motocicleta.marca}"></td>
+							<td th:text="${motocicleta.categoria}"></td>
+							<td th:text="${motocicleta.descripcion}"></td>
+							<td th:text="${motocicleta.precioBase}"></td>
+							<td th:text="${motocicleta.peso}"></td>
+							<td th:text="${motocicleta.cilindrada}"></td>
 							
-							<td><a href="#" th:href="@{/admin/trabajador/editar/{id}(id=${trabajador.id})}"
+							<td><a href="#" th:href="@{/motocicleta/admin/editar/{id}(id=${motocicleta.id})}"
 								class="btn btn-custom">Editar</a>
 							
-							<td><a href="#" th:href="@{/admin/trabajador/borrar/{id}(id=${trabajador.id})}"
+							<td><a href="#" th:href="@{/motocicleta/admin/borrar/{id}(id=${motocicleta.id})}"
 								class="btn">Borrar</a>
 						</tr>
 					</tbody>

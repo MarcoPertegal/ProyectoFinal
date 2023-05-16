@@ -39,4 +39,6 @@ public class TrabajadorService extends BaseServiceImpl<Trabajador, Long, Trabaja
 	    result.ifPresent(trabajador -> repositorio.delete(trabajador));
 	}
 	
+	
+	
 }

@@ -14,7 +14,7 @@ import com.salesianostriana.dam.concesionario.service.base.BaseServiceImpl;
 public class MotocicletaService extends BaseServiceImpl<Motocicleta, Long, MotocicletaRepository>{
 	
 	@Autowired
-	private MotocicletaRepository repository;
+	private MotocicletaRepository repositorio;
 
 	@Override
 	public List<Motocicleta> findAll() {
@@ -30,7 +30,15 @@ public class MotocicletaService extends BaseServiceImpl<Motocicleta, Long, Motoc
 		return repository.findByNombreContainingIgnoreCase(nombre);
 	}
 	
+	public Motocicleta save(Motocicleta motocicleta) {
+		return repositorio.save(motocicleta);
+	}
 	
+	@Override
+	public void delete(Motocicleta m) {
+	    Optional<Motocicleta> result = findById(m.getId());
+	    result.ifPresent(motocicleta -> repositorio.delete(motocicleta));
+	}
 	
 	
 }

@@ -54,6 +54,9 @@ main{
 	background-color: rgb(51, 2, 2);
 	color: white;
 }
+tbody td img{
+	width: 80%;
+}
 /*index*/
 #mainIndex .cajaDeTexto .row{
     text-align: center;

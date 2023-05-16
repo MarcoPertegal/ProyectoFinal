@@ -6,28 +6,24 @@
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
     <main>
-		<table class="table">
-					<thead>
-						<tr>
-							<th>Nombre</th>
-							<th>Apellidos</th>
-							<th>Dni</th>
-							<th>Direccion</th>
-							<th>Municipio</th>
-							<th>Teléfono</th>
-							<th>Sueldo</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="motocicleta : ${motocicletas}">
-							<td th:text="${motocicleta.nombre}"></td>
-							<td th:text="${motocicleta.descripcion}"></td>
-							<td th:text="${motocicleta.cilindrada}"></td>
-						</tr>
-					</tbody>
-				</table>
-				
-    </main>
+    	<table class="table">
+        	<thead>
+	            <tr>
+	                <th>Nombre</th>
+	                <th>Descripción</th>
+	                <th>Cilindrada</th>
+	            </tr>
+        	</thead>
+        	<tbody>
+	            <tr th:each="motocicleta : ${motocicletas}">
+	                <td th:text="${motocicleta.nombre}"></td>
+	                <td th:text="${motocicleta.descripcion}"></td>
+	                <td th:text="${motocicleta.cilindrada}"></td>
+	            </tr>
+        	</tbody>
+    	</table>
+	</main>
+    
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
 </body>
 </html>

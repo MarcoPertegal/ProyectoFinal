@@ -4,13 +4,26 @@ import java.util.List;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@Data
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Motocicleta extends Producto{
+	
+	//HE AÑADIDO EL BUILDER DATA GETTER Y SETTER
 	
 	private double peso, cilindrada;
 

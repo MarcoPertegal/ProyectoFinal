@@ -16,13 +16,17 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Data
 @AllArgsConstructor
-public abstract class Producto {
+@NoArgsConstructor
+public class Producto {
+	
+	//HE QUITADO LA ANOTACIÓN BUILDER Y BUILDER DEFAULT DE PRODUCTO Y SE LO HE PUESTO A MOTO, ¿ESTA BIEN?
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

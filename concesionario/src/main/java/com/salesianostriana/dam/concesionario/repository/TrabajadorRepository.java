@@ -7,5 +7,6 @@ import com.salesianostriana.dam.concesionario.model.Trabajador;
 
 @Component
 public interface TrabajadorRepository extends JpaRepository<Trabajador, Long> {
-
+	
+	
 }
