@@ -36,7 +36,7 @@ public class MainController {
 	}
 	@GetMapping("/motocicletas")
 	public String motocicletas() {
-		return "/motocicletas";
+		return "motocicletas";
 	}
 	
 	

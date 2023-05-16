@@ -8,11 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.concesionario.formbeans.SearchBean;
 import com.salesianostriana.dam.concesionario.service.MotocicletaService;
 
 @Controller
+@RequestMapping("/motocicleta")
 public class MotocicletaController {
 	
 	@Autowired
@@ -21,13 +23,21 @@ public class MotocicletaController {
 	@Autowired
 	private MotocicletaService motocicletaService;
 	
-	@GetMapping({"/list"})//cambiar nombre
+	@GetMapping("/")
+	public String motocicletaList1(Model model) {
+		
+		model.addAttribute("motocicletas", motocicletaService.findAll());
+		return "motocicletas";
+	}
+	
+	
+	@GetMapping("/list")//cambiar nombre
 	public String motocicletaList(Model model) {
 		
 		model.addAttribute("motocicletas", motocicletaService.findAll());
 
 		model.addAttribute("searchForm", new SearchBean());
-		return "list";//cambiar nombre
+		return "motocicletas";//cambiar nombre
 	}
 	
 	@PostMapping("/search")//cambiar nombre

@@ -14,7 +14,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -27,14 +26,16 @@ public abstract class Producto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	protected Long id;
 	
-	private String marca, nombre, categoria, descripcion, precioBase;
+	protected String marca, nombre, categoria, descripcion, precioBase;
+	protected String imagen;
+	
+	
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy="producto", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-	@Builder.Default
 	private List<LineaVenta> listaLineaVenta = new ArrayList<>();
 	
 }

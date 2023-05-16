@@ -12,10 +12,10 @@ import lombok.ToString;
 public class Accesorio extends Producto{
 	
 	private String caracteristicas;
-	
+
 	public Accesorio(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
-			List<LineaVenta> listaLineaVenta, String caracteristicas) {
-		super(id, marca, nombre, categoria, descripcion, precioBase, listaLineaVenta);
+			String imagen, List<LineaVenta> listaLineaVenta, String caracteristicas) {
+		super(id, marca, nombre, categoria, descripcion, precioBase, imagen, listaLineaVenta);
 		this.caracteristicas = caracteristicas;
 	}
 	
