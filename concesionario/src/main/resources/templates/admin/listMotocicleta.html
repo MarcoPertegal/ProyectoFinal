@@ -36,7 +36,7 @@
 							<td th:text="${motocicleta.marca}"></td>
 							<td th:text="${motocicleta.categoria}"></td>
 							<td th:text="${motocicleta.descripcion}"></td>
-							<td th:text="${motocicleta.precioBase}"></td>
+							<td th:text="${#numbers.formatCurrency(motocicleta.precioBase)}"></td>
 							<td th:text="${motocicleta.peso}"></td>
 							<td th:text="${motocicleta.cilindrada}"></td>
 							

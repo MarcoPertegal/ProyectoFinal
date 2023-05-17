@@ -62,14 +62,14 @@ public class TrabajadorController {
 	public String borrarTrabajador(@PathVariable("id") Long id, Model model) {
 	    Optional<Trabajador> optionalTrabajador = trabajadorService.findById(id);
 	    Trabajador trabajador = optionalTrabajador.get();
-	    
+	    /*
 	    if (optionalTrabajador.isPresent()) {
 	    	trabajadorService.delete(trabajador);
 	    }
 	    
 	    return "redirect:/admin/trabajador/";
-	    
-	    /*
+	    */
+
 	 	if (optionalTrabajador.isPresent()) {
 	    	
 	    	if (ventaService.numeroVentasTrabajador(trabajador) == 0) {
@@ -81,7 +81,7 @@ public class TrabajadorController {
 	    	
 	    }
     	return "redirect:/admin/trabajador/";
-	     */
+
 	    
 	}
 
