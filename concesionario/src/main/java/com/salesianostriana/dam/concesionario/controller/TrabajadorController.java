@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.concesionario.model.Trabajador;
 import com.salesianostriana.dam.concesionario.service.TrabajadorService;
+import com.salesianostriana.dam.concesionario.service.VentaService;
 
 @Controller
 @RequestMapping("/admin/trabajador")
@@ -21,8 +22,11 @@ public class TrabajadorController {
 	@Autowired
 	private TrabajadorService trabajadorService;
 	
+	@Autowired
+	private VentaService ventaService;
+	
 	@GetMapping("/")
-	public String index(Model model) {
+	public String listTrabajador(Model model) {
 		model.addAttribute("listaTrabajadores", trabajadorService.findAll());
 		return "admin/listTrabajador";
 	}
@@ -43,9 +47,10 @@ public class TrabajadorController {
 	@GetMapping("/editar/{id}")
 	public String editarTrabajador(@PathVariable("id") Long id, Model model) {
 	    Optional<Trabajador> optionalTrabajador = trabajadorService.findById(id);
+	    Trabajador trabajador = optionalTrabajador.get();
 	    
 	    if (optionalTrabajador.isPresent()) {
-	        Trabajador trabajador = optionalTrabajador.get();
+	        
 	        model.addAttribute("trabajador", trabajador);
 	        return "admin/formTrabajador";
 	    } else {
@@ -56,16 +61,27 @@ public class TrabajadorController {
 	@GetMapping("/borrar/{id}")
 	public String borrarTrabajador(@PathVariable("id") Long id, Model model) {
 	    Optional<Trabajador> optionalTrabajador = trabajadorService.findById(id);
+	    Trabajador trabajador = optionalTrabajador.get();
 	    
 	    if (optionalTrabajador.isPresent()) {
-	        Trabajador trabajador = optionalTrabajador.get();
-	        trabajadorService.delete(trabajador);
-	        
-	        return "redirect:/admin/trabajador/";
-	    } else {
-	    	
-	    	return "redirect:/admin/trabajador/";
+	    	trabajadorService.delete(trabajador);
 	    }
+	    
+	    return "redirect:/admin/trabajador/";
+	    
+	    /*
+	 	if (optionalTrabajador.isPresent()) {
+	    	
+	    	if (ventaService.numeroVentasTrabajador(trabajador) == 0) {
+		        trabajadorService.delete(trabajador);			
+			} else {
+				
+				return "redirect:/admin/trabajador/?error=true";
+			}
+	    	
+	    }
+    	return "redirect:/admin/trabajador/";
+	     */
 	    
 	}
 

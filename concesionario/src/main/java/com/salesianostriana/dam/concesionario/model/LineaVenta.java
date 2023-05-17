@@ -1,8 +1,11 @@
 package com.salesianostriana.dam.concesionario.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class LineaVenta {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	private double pvp;
@@ -26,4 +29,18 @@ public class LineaVenta {
 	
 	@ManyToOne
 	private Venta venta;
+	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_linea_venta_producto"))
+	private Producto producto;
+	
+	public void addToProducto(Producto producto) {
+		this.producto = producto;
+		producto.getListaLineaVenta().add(this);
+	}
+	
+	public void removeFromProducto(Producto producto) {
+		producto.getListaLineaVenta().remove(this);
+		this.producto = null;
+	}
 }
