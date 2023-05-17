@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.concesionario.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -28,11 +29,12 @@ public class Motocicleta extends Producto{
 	private double peso, cilindrada;
 
 	public Motocicleta(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
-			String imagen, List<LineaVenta> listaLineaVenta, double peso, double cilindrada) {
-		super(id, marca, nombre, categoria, descripcion, precioBase, imagen, listaLineaVenta);
+			String imagen, List<LineaVenta> listaLineaVenta, double peso, double cilindrada, LocalDate alta) {
+		super(id, marca, nombre, categoria, descripcion, precioBase, imagen, alta, listaLineaVenta);
 		this.peso = peso;
 		this.cilindrada = cilindrada;
 	}
+	
 	
 
 	

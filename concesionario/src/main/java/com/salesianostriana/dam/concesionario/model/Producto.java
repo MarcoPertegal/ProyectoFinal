@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.concesionario.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,6 +40,10 @@ public class Producto {
 	
 	protected String marca, nombre, categoria, descripcion, precioBase;
 	protected String imagen;
+	
+	@DateTimeFormat(iso = ISO.DATE_TIME)
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate alta;
 	
 	
 	

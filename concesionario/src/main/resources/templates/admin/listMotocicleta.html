@@ -8,7 +8,7 @@
     <main class="listado">
         <div class="container">
 		<div class="row">
-			<div class="col-md-offset-1 col-md-10">
+			<div class="col-md-offset-1 col-md-11">
 				<div class="pull-right">
 					<a href="formMotocicleta.html" th:href="@{/motocicleta/admin/nuevo}"
 						class="btn">Nueva Motocicleta</a>
@@ -24,6 +24,7 @@
 							<th>Precio Base</th>
 							<th>Peso</th>
 							<th>Cilindrada</th>
+							<th>Fecha Alta</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -39,6 +40,7 @@
 							<td th:text="${#numbers.formatCurrency(motocicleta.precioBase)}"></td>
 							<td th:text="${motocicleta.peso}"></td>
 							<td th:text="${motocicleta.cilindrada}"></td>
+							<td th:text="${motocicleta.alta}"></td>
 							
 							<td><a href="#" th:href="@{/motocicleta/admin/editar/{id}(id=${motocicleta.id})}"
 								class="btn btn-custom">Editar</a>
