@@ -28,13 +28,13 @@ public class MotocicletaController {
 	private MotocicletaService motocicletaService;
 	
 	
-	@GetMapping("/")//cambiar nombre
+	@GetMapping("/")
 	public String motocicletaList(Model model) {
 		
 		model.addAttribute("listaMotocicletas", motocicletaService.findAll());
 
 		model.addAttribute("searchForm", new SearchBean());
-		return "motocicletas";//cambiar nombre
+		return "motocicletas";
 	}
 	
 	@PostMapping("/search")//cambiar nombre

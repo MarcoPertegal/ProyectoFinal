@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="motocicletas.html" th:href="@{/motocicleta/}" sec:authorize="isAuthenticated()" class="nav-item nav-link">Motocicletas</a> 
-                    <a href="accesorios/accesorios.html"           sec:authorize="isAuthenticated()" class="nav-item nav-link">Accesorios</a>
+                    <a href="accesorios.html" th:href="@{/accesorio/}" sec:authorize="isAuthenticated()" class="nav-item nav-link">Accesorios</a>
                     <a href="../../contacto.html" th:href="@{/contacto}" class="nav-item nav-link">Contacto</a>
                     <a href="../../novedades.html" th:href="@{/novedades}" class="nav-item nav-link">Novedades</a>
                 	<a href="../../admin/indexAdmin.html" th:href="@{/admin/indexAdmin}" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item nav-link">OPCIONES ADMIN</a>
