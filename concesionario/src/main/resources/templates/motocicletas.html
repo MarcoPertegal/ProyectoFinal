@@ -5,24 +5,54 @@
 </head>
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
-    <main>
-    	<table class="table">
-        	<thead>
-	            <tr>
-	                <th>Nombre</th>
-	                <th>Descripción</th>
-	                <th>Cilindrada</th>
-	            </tr>
-        	</thead>
-        	<tbody>
-	            <tr th:each="motocicleta : ${motocicletas}">
-	                <td th:text="${motocicleta.nombre}"></td>
-	                <td th:text="${motocicleta.descripcion}"></td>
-	                <td th:text="${motocicleta.cilindrada}"></td>
-	            </tr>
-        	</tbody>
-    	</table>
+    
+    
+    <main class="container-fluid" id="listadoCliente">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<h3>Categorías</h3>
+				<ul class="nav nav-sidebar">
+					<li th:each="motocicleta : ${listaMotocicletas}"><a href="#"
+						th:href="@{/?(idMotocicleta=${motocicleta.id})}"
+						th:text="${motocicleta.categoria}">categoría</a></li>
+				</ul>
+			</div>
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<div class="row">
+					<div class="col-sm-3" th:each="motocicleta : ${listaMotocicletas}">
+						<a href="#" th:href="@{/motocicleta/{id}(id=${motocicleta.id})}">
+							<div class="col-item">
+								<div class="photo">
+									<img src="http://placehold.it/350x260"
+										th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
+										class="img-responsive" alt="a" />
+								</div>
+								<div class="info">
+									<div class="row">
+
+										<div class="price col-md-12">
+											<h5 th:text="${#strings.abbreviate(motocicleta.nombre,65)}">Nombre</h5>
+											<div class="price-text-color">
+												<span th:text="${#numbers.formatCurrency(motocicleta.precioBase)}">10</span>
+											</div>
+											<div class="description-text-color">
+												<span th:text="${#strings.abbreviate(motocicleta.descripcion,170)}">10</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 	</main>
+    
+    
     
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
 </body>

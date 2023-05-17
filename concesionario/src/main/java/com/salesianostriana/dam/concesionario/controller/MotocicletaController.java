@@ -27,18 +27,11 @@ public class MotocicletaController {
 	@Autowired
 	private MotocicletaService motocicletaService;
 	
-	@GetMapping("/")
-	public String motocicletaList1(Model model) {
-		
-		model.addAttribute("motocicletas", motocicletaService.findAll());
-		return "motocicletas";
-	}
 	
-	
-	@GetMapping("/list")//cambiar nombre
+	@GetMapping("/")//cambiar nombre
 	public String motocicletaList(Model model) {
 		
-		model.addAttribute("motocicletas", motocicletaService.findAll());
+		model.addAttribute("listaMotocicletas", motocicletaService.findAll());
 
 		model.addAttribute("searchForm", new SearchBean());
 		return "motocicletas";//cambiar nombre
