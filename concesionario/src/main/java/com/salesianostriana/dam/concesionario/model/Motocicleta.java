@@ -24,8 +24,6 @@ import lombok.ToString;
 @Builder
 public class Motocicleta extends Producto{
 	
-	//HE AÑADIDO EL BUILDER DATA GETTER Y SETTER
-	
 	private double peso, cilindrada;
 
 	public Motocicleta(Long id, String marca, String nombre, String descripcion, String precioBase, String imagen,

@@ -11,27 +11,18 @@
             <div class="col-11 col-md-5 col-xl-5 mx-auto">
                 <img src="http://placehold.it/400x400" alt=""
 					th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
-					class="img-responsive" />
+					 />
             </div>
             <div class="col-11 col-md-5 col-xl-5 mx-auto">
                 <h3 th:text=${motocicleta.nombre}></h3>
                 <h5 th:text=${motocicleta.marca}></h5>
-                <p th:text=${motocicleta.descripcion}></p>
-                <h5 th:text=${motocicleta.precio}></h5>
-                <div class="colores d-flex">
-                    <div class="color">
-                        <a href="#">
-                            <img src="img/imgPrueba.jpg" alt="Opcion de color">
-                            <p>Azul neón</p>
-                        </a>
-                    </div>
-                    <div class="color">
-                        <a href="#">
-                            <img src="img/imgPueba2.jpg" alt="Opcion de color">
-                            <p>Negro negro</p>
-                        </a>
-                    </div>
-                </div>
+                <div class="d-flex ">
+					<p class="me-2 fw-bold" th:text="${motocicleta.cilindrada + ' Cv'}"></p>
+					<span class="me-2 fw-bold">|</span>
+					<p class="fw-bold" th:text="${motocicleta.peso + ' Kg'}"></p>
+				</div>
+                <p class="desc" th:text=${motocicleta.descripcion}></p>
+                <h5 th:text="${motocicleta.precioBase + ' €'}"></h5>
                 <button type="button" class="btn">Comprar</button>
             </div>
         </div>
