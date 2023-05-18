@@ -47,13 +47,6 @@ public class ClienteService extends BaseServiceImpl<Cliente, Long, ClienteReposi
 		return repositorio.findNumProductosByCategoria(categoria);
 	}
 	
-	
-	/*
-	 * Este método sirve para obtener un número de productos aleatorios.
-	 * Lo realizamos en Java para abstraernos mejor de la base de datos
-	 * concreta que vamos a usar.
-	 * Algunos SGBDR nos permitirían usar la función RANDOM, y podríamos
-	 * hacer esta consulta de forma nativa.
 	 
 	public List<Producto> obtenerProductosAleatorios(int numero) {
 		// Obtenemos los ids de todos los productos
