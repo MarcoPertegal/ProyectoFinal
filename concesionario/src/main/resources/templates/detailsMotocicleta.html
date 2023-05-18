@@ -1,0 +1,44 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Motocicletas - TU MOTO</title>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/nav::nav}"></nav>    
+    
+    <main id="details">
+        <div class="row">
+            <div class="col-11 col-md-5 col-xl-5 mx-auto">
+                <img src="http://placehold.it/400x400" alt=""
+					th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
+					class="img-responsive" />
+            </div>
+            <div class="col-11 col-md-5 col-xl-5 mx-auto">
+                <h3 th:text=${motocicleta.nombre}></h3>
+                <h5 th:text=${motocicleta.marca}></h5>
+                <p th:text=${motocicleta.descripcion}></p>
+                <h5 th:text=${motocicleta.precio}></h5>
+                <div class="colores d-flex">
+                    <div class="color">
+                        <a href="#">
+                            <img src="img/imgPrueba.jpg" alt="Opcion de color">
+                            <p>Azul neón</p>
+                        </a>
+                    </div>
+                    <div class="color">
+                        <a href="#">
+                            <img src="img/imgPueba2.jpg" alt="Opcion de color">
+                            <p>Negro negro</p>
+                        </a>
+                    </div>
+                </div>
+                <button type="button" class="btn">Comprar</button>
+            </div>
+        </div>
+    </main>
+    
+    
+    
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>
