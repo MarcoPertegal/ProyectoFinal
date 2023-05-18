@@ -1,0 +1,57 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Gestión Accesorios - TU MOTO</title>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/navAdmin::navAdmin}"></nav>    
+    <main class="listado">
+        <div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-12">
+				<div class="pull-right">
+					<a href="formAccesorio.html" th:href="@{/accesorio/admin/nuevo}"
+						class="btn">Nuevo Accesorio</a>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Imagen</th>
+							<th>Nombre</th>
+							<th>Marca</th>
+							<th>Categoría</th>
+							<th>Descripción</th>
+							<th>Precio Base</th>
+							<th>Características</th>
+							<th>Fecha Alta</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="accesorio : ${listaAccesorios}">
+							<td><img
+								th:src="${not (#strings.isEmpty(accesorio.imagen))} 
+								              ? ${accesorio.imagen} : 'http://placehold.it/48x48'"
+								class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td th:text="${accesorio.nombre}"></td>
+							<td th:text="${accesorio.marca}"></td>
+							<td th:text="${accesorio.categoria}"></td>
+							<td th:text="${accesorio.descripcion}"></td>
+							<td th:text="${#numbers.formatCurrency(accesorio.precioBase)}"></td>
+							<td th:text="${accesorio.caracteristicas}"></td>
+							<td th:text="${accesorio.alta}"></td>
+							
+							<td><a href="#" th:href="@{/accesorio/admin/editar/{id}(id=${accesorio.id})}"
+								class="btn btn-custom">Editar</a>
+							
+							<td><a href="#" th:href="@{/accesorio/admin/borrar/{id}(id=${accesorio.id})}"
+								class="btn">Borrar</a>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+    </main>
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>
