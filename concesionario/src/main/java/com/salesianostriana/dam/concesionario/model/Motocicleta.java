@@ -28,9 +28,9 @@ public class Motocicleta extends Producto{
 	
 	private double peso, cilindrada;
 
-	public Motocicleta(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
-			String imagen, List<LineaVenta> listaLineaVenta, double peso, double cilindrada, LocalDate alta) {
-		super(id, marca, nombre, categoria, descripcion, precioBase, imagen, alta, listaLineaVenta);
+	public Motocicleta(Long id, String marca, String nombre, String descripcion, String precioBase, String imagen,
+			Categoria categoria, LocalDate alta, List<LineaVenta> listaLineaVenta, double peso, double cilindrada) {
+		super(id, marca, nombre, descripcion, precioBase, imagen, categoria, alta, listaLineaVenta);
 		this.peso = peso;
 		this.cilindrada = cilindrada;
 	}

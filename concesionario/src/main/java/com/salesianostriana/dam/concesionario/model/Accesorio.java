@@ -26,9 +26,9 @@ public class Accesorio extends Producto{
 	
 	private String caracteristicas;
 
-	public Accesorio(Long id, String marca, String nombre, String categoria, String descripcion, String precioBase,
-			String imagen, List<LineaVenta> listaLineaVenta, String caracteristicas, LocalDate alta) {
-		super(id, marca, nombre, categoria, descripcion, precioBase, imagen, alta, listaLineaVenta);
+	public Accesorio(Long id, String marca, String nombre, String descripcion, String precioBase, String imagen,
+			Categoria categoria, LocalDate alta, List<LineaVenta> listaLineaVenta, String caracteristicas) {
+		super(id, marca, nombre, descripcion, precioBase, imagen, categoria, alta, listaLineaVenta);
 		this.caracteristicas = caracteristicas;
 	}
 	

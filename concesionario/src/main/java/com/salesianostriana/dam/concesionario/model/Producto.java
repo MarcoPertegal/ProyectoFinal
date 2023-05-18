@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,17 +34,18 @@ import lombok.ToString;
 @NoArgsConstructor
 public class Producto {
 	
-	//HE QUITADO LA ANOTACIÓN BUILDER Y BUILDER DEFAULT DE PRODUCTO Y SE LO HE PUESTO A MOTO, ¿ESTA BIEN?
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
+
 	
-	protected String marca, nombre, categoria, descripcion, precioBase;
+	protected String marca, nombre, descripcion, precioBase;
 	protected String imagen;
 	
-	@DateTimeFormat(iso = ISO.DATE_TIME)
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	@Enumerated(EnumType.STRING)
+	Categoria categoria;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate alta;
 	
 	
