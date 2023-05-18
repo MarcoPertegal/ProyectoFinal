@@ -90,7 +90,6 @@ public class Venta {
 	
 	public void removeLineaVenta(LineaVenta lV) {
 		this.listaLineaVenta.remove(lV);
-		lV.setVenta(null);
 		
 	}
 }
