@@ -38,8 +38,8 @@
 							<td th:text="${motocicleta.categoria}"></td>
 							<td th:text="${motocicleta.descripcion}"></td>
 							<td th:text="${#numbers.formatCurrency(motocicleta.precioBase)}"></td>
-							<td th:text="${motocicleta.peso}"></td>
-							<td th:text="${motocicleta.cilindrada}"></td>
+							<td th:text="${motocicleta.peso}">KG</td>
+							<td th:text="${motocicleta.cilindrada}">CV</td>
 							<td th:text="${motocicleta.alta}"></td>
 							
 							<td><a href="#" th:href="@{/motocicleta/admin/editar/{id}(id=${motocicleta.id})}"
