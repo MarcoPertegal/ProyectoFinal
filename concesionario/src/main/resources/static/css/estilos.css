@@ -68,13 +68,13 @@ tbody td img{
     font-size: 30pt;
     color: rgb(78, 3, 3);
 }
+#mainIndex{
+	margin-top: 0px !important;
+}
 
 /*novedades*/
 #mainNovedades .seccion img{
     width: 100%;
-}
-#mainNovedades{
-    margin-top: 70px;
 }
 #mainNovedades .card-title a{
     font-size: 18pt;
@@ -133,12 +133,6 @@ tbody td img{
     margin-bottom: 2%;
 }
 #mainContacto .dondeEstamos iframe{
-    width: 100%;
-}
-#mainContacto{
-    margin-top: 70px;
-}
-#mainContacto .row{
     width: 100%;
 }
 #mainContacto .contenedor{
@@ -338,4 +332,7 @@ tbody td img{
 }
 .desc{
 	font-size: 14pt;
+}
+#imgAccesorio{
+	width: 80% !important;
 }
