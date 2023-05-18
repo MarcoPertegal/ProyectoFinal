@@ -13,9 +13,9 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	
 	@Autowired
 	private VentaRepository repositorio;
-	/*
+
 	public int numeroVentasTrabajador(Trabajador trabajador) {
 		return repositorio.findNumTrabajadoresByVenta(trabajador);
 	}
-	*/
+
 }

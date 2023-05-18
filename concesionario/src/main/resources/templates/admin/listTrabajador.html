@@ -8,7 +8,11 @@
     <main class="listado">
         <div class="container">
 		<div class="row">
-			<div class="col-md-offset-1 col-md-10">
+			<div class="col-md-offset-2 col-md-10">
+				<div class="alert alert-warning" role="alert" th:if="${param.error}">
+    				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    				<span>No se pueden eliminar trabajadores que tengan ventas asociadas</span>
+				</div>
 				<div class="pull-right">
 					<a href="formTrabajador.html" th:href="@{/admin/trabajador/nuevo/}"
 						class="btn">Nuevo Trabajador</a>
