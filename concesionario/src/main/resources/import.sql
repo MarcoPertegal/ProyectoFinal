@@ -4,9 +4,9 @@ insert into cliente (id, nombre, apellidos, email, telefono, password, direccion
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '70949233M', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '15340247M', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
 
-insert into venta (id, fecha, cliente_id, trabajador_id) values (1, '2021-02-12 00:00:00', 1, 1);
-insert into venta (id, fecha, cliente_id, trabajador_id) values (2, '2023-04-10 00:00:00', 2, 1);
-insert into venta (id, fecha, cliente_id, trabajador_id) values (3, '2023-08-29 00:00:00', 2, 2);
+insert into venta (id, fecha, cliente_id, trabajador_id) values (1, '2021-02-12', 1, 1);
+insert into venta (id, fecha, cliente_id, trabajador_id) values (2, '2023-04-10', 2, 1);
+insert into venta (id, fecha, cliente_id, trabajador_id) values (3, '2023-08-29', 2, 2);
 
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (1, 'yamaha', 'R1M', 'SUPERSPORT', 'Yamaha ha creado la R1M de competición utilizando algunas de las tecnologías más sofisticadas desarrolladas a partir de la ganadora M1 de MotoGP.', 20000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2022/YZF1000R1SPL/2022-Yamaha-YZF1000R1SPL-EU-Icon_Performance-Studio-001-03.jpg', '2022-05-12');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (2, 'yamaha', 'R3', 'SUPERSPORT', 'La carrocería estilizada y atlética de la R3 incorpora una toma de admisión de aire central inspirada en la emblemática máquina M1 de MotoGP® ganadora de Yamaha.', 12000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/YZF-R320/2023-Yamaha-YZF-R320-EU-Icon_Blue-Studio-001-03.jpg', '2022-05-20');
