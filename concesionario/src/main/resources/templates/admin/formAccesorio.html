@@ -47,7 +47,7 @@
                     name="categoria">
                     <option value=""selected disabled>Categoría</option>
                     <option th:each="categoria :${T(com.salesianostriana.dam.concesionario.model.Categoria).values()}"
-                    th:value="${categoria}" th:text="${categoria}" required="required"></option>
+                    th:value="${categoria}" th:selected="${categoria} == *{categoria}" th:text="${categoria}" required="required"></option>
                     </select>
                 </div>
                 <button type="submit" class="btn">Enviar</button>
