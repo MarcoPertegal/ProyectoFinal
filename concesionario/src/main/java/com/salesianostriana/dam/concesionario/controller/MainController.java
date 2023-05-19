@@ -58,6 +58,10 @@ public class MainController {
 	public String accesorios() {
 		return "accesorios";
 	}
+	@GetMapping("/carrito")
+	public String carrito() {
+		return "carrito";
+	}
 	
 	@GetMapping("/motocicleta/{id}")
 	public String mostrarDetailsMotocicleta(@PathVariable("id") Long id, Model model) {

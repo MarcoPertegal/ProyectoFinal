@@ -26,7 +26,6 @@ public class LineaVenta {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private double pvp;
 	private int cantidad;
 	
 	@ManyToOne

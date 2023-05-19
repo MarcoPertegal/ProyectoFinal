@@ -65,12 +65,15 @@ public class MotocicletaController {
 	@GetMapping("/admin/editar/{id}")
 	public String editarMotocicleta(@PathVariable("id") Long id, Model model) {
 	    Optional<Motocicleta> optionalMotocicleta = motocicletaService.findById(id);
-	    optionalMotocicleta.ifPresent(motocicleta -> {
+	    Motocicleta motocicleta = optionalMotocicleta.get();
+	    
+	    if (optionalMotocicleta.isPresent()) {
+	        
 	        model.addAttribute("motocicleta", motocicleta);
-	    });
-
-	    return optionalMotocicleta.map(motocicleta -> "admin/formMotocicleta")
-	                              .orElse("redirect:/motocicleta/admin");
+	        return "admin/formMotocicleta";
+	    } else {
+	        return "redirect:/motocicleta/admin";
+	    }
 	}
 	
 	@GetMapping("/admin/borrar/{id}")

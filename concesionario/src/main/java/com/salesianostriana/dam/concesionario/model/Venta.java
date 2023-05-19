@@ -38,6 +38,8 @@ public class Venta {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fecha;
 	
+	private double total;
+	
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name= "fk_venta_cliente"))

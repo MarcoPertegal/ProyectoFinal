@@ -23,6 +23,13 @@
 				</div>
                 <p class="desc" th:text=${motocicleta.descripcion}></p>
                 <h5 th:text="${motocicleta.precioBase + ' €'}"></h5>
+                
+                <!--
+                <a href="#" th:href="@{/productoACarrito/{id}(id=${producto.id})}">
+					<button type="button" class="btn btn-primary">
+  						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp; Comprar
+					</button>
+				</a>-->
                 <button type="button" class="btn">Comprar</button>
             </div>
         </div>
