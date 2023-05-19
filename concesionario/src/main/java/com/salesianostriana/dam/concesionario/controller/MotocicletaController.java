@@ -29,24 +29,21 @@ public class MotocicletaController {
 	
 	
 	@GetMapping("/")
-	public String motocicletaList(Model model) {
-		
+	public String motocicletaList(Model model) {		
 		model.addAttribute("listaMotocicletas", motocicletaService.findAll());
-
 		model.addAttribute("searchForm", new SearchBean());
 		return "motocicletas";
 	}
 	
-	@PostMapping("/search")//cambiar nombre
+	@PostMapping("/search")
 	  public String searchMotocicleta(@ModelAttribute("searchForm") SearchBean searchBean,
 			 Model model){
-	  	model.addAttribute("motocicletas", motocicletaService.findByNombre(searchBean.getSearch()));
+	  	model.addAttribute("listaMotocicletas", motocicletaService.findByNombre(searchBean.getSearch()));
 	  
-	  return "list";//cambiar nombre
+	  return "motocicletas";
 	  }
 	
 	//METODOS PARA ADMIN
-	//hay que añadir un enum para las categorias, (mirar ejemplo formularios)
 	@GetMapping("/admin")
 	public String listMotocicleta(Model model) {
 		model.addAttribute("listaMotocicletas", motocicletaService.findAll());

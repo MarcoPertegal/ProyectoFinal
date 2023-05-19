@@ -1,7 +1,7 @@
 package com.salesianostriana.dam.concesionario.formbeans;
 
 public class SearchBean {
-	
+
 	private String search;
 	
 	public SearchBean(){

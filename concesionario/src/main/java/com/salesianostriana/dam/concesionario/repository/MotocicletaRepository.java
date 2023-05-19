@@ -12,4 +12,5 @@ import com.salesianostriana.dam.concesionario.model.Motocicleta;
 public interface MotocicletaRepository extends JpaRepository<Motocicleta, Long>{
 	
 	public  List<Motocicleta> findByNombreContainingIgnoreCase(String nombre);
+	
 }
