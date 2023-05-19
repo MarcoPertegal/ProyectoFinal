@@ -37,6 +37,7 @@ footer h6{
 }
 main{
 	margin-top: 70px;
+	margin-bottom: 70px;
 }
 .btn{
 	background-color: rgb(178, 162, 72);
@@ -205,6 +206,7 @@ tbody td img{
 }
 
 /*listadoCliente*/
+
 #listadoCliente .col-item{
     border: 1px solid #E1E1E1;
     border-radius: 5px;
@@ -335,4 +337,7 @@ tbody td img{
 }
 #imgAccesorio{
 	width: 80% !important;
+}
+#listadoCliente{
+	margin-bottom: 0px !important;
 }

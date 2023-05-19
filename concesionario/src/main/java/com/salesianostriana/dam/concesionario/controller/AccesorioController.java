@@ -38,16 +38,15 @@ public class AccesorioController {
 		return "accesorios";
 	}
 	
-	@PostMapping("/search")//cambiar nombre
+	@PostMapping("/search")
 	  public String searchAccesorio(@ModelAttribute("searchForm") SearchBean searchBean,
 			 Model model){
-	  	model.addAttribute("accesorios", accesorioService.findByNombre(searchBean.getSearch()));
+	  	model.addAttribute("listaAccesorios", accesorioService.findByNombre(searchBean.getSearch()));
 	  
-	  return "list";//cambiar nombre
+	  return "accesorios";
 	  }
 	
 	//METODOS PARA ADMIN
-	//hay que añadir un enum para las categorias, (mirar ejemplo formularios)
 	@GetMapping("/admin")
 	public String listAccesorio(Model model) {
 		model.addAttribute("listaAccesorios", accesorioService.findAll());

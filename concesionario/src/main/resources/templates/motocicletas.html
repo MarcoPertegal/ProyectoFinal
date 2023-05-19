@@ -7,18 +7,22 @@
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
     
     
-    <main class="container-fluid" id="listadoCliente">
+    <main id="listadoCliente">
 		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<h3>Categorías</h3>
-				<ul class="nav nav-sidebar">
-					<li th:each="motocicleta : ${listaMotocicletas}"><a href="#"
-						th:href="@{/?(idMotocicleta=${motocicleta.id})}"
-						th:text="${motocicleta.categoria}">categoría</a></li>
+			<div class="col-sm-3 col-md-2 sidebar bg-secondary">
+				<ul class="nav nav-sidebar mt-3">
+					<div class="d-flex mt-4">
+						<form action="#" th:action="@{/motocicleta/search}" th:object="${searchForm}" method="POST">
+						<input type="text" class="form-control" name="nombre" placeholder="Buscar Por Nombre" th:field="*{search}" />
+						<button class="btn" type="submit">
+							<i class="bi bi-search"></i>
+						</button>
+						</form>
+					</div>
 				</ul>
 			</div>
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mt-3 mb-5">
 				<div class="row">
 					<div class="col-sm-3" th:each="motocicleta : ${listaMotocicletas}">
 						<a href="#" th:href="@{/motocicleta/{id}(id=${motocicleta.id})}">
