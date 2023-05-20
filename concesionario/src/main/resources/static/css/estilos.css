@@ -58,6 +58,9 @@ main{
 tbody td img{
 	width: 100%;
 }
+.active{
+	color: rgb(130, 119, 55);
+}
 /*index*/
 #mainIndex .cajaDeTexto .row{
     text-align: center;

@@ -10,7 +10,7 @@
             <div class="cabecera">
                 <h1>Formulario Motocicleta</h1>
             </div>
-            <form method="post" action="#" th:action="@{/motocicleta/admin/nuevo/submit}" th:object="${motocicleta}">
+            <form method="post" action="#" th:action="@{/motocicleta/admin/nuevo/submit}" th:object="${motocicleta}" onsubmit="return validarFormularioMotocicleta()">
 				
 				<input type="hidden" th:field="*{id}" id="id" />
 				
@@ -20,15 +20,15 @@
 				</div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="nombre" placeholder="Nombre" 
-                    name="nombre" required="required" th:field="*{nombre}">
+                    name="nombre" required="required" th:field="*{nombre}" maxlength="25">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="marca" placeholder="Marca" 
-                    name="marca" required="required" th:field="*{marca}">
+                    name="marca" required="required" th:field="*{marca}" maxlength="25">
                 </div>
                 <div class="mb-3 mt-3">
 					<textarea class="form-control" id="descripcion" placeholder="Descripción" 
-					name="descripcion" required="required" rows="3" th:field="*{descripcion}"></textarea>
+					name="descripcion" required="required" rows="3" th:field="*{descripcion}" maxlength="250"></textarea>
 				</div>
                 <div class="mb-3 mt-3">
                     <input type="number" class="form-control" id="precioBase"  pattern="^[0-9]+" placeholder="Precio" 

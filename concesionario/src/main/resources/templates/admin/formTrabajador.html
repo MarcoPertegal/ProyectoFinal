@@ -10,17 +10,17 @@
             <div class="cabecera">
                 <h1>Formulario Trabajador</h1>
             </div>
-            <form method="post" action="#" th:action="@{/admin/trabajador/nuevo/submit}" th:object="${trabajador}">
+            <form method="post" action="#" th:action="@{/admin/trabajador/nuevo/submit}" th:object="${trabajador}" onsubmit="return validarFormularioTrabajador()">
 				
 				<input type="hidden" th:field="*{id}" id="id" />
 				
                 <div class="mb-3">
                     <input type="text" class="form-control" id="nombre" placeholder="Nombre" 
-                    name="nombre" required="required" th:field="*{nombre}">
+                    name="nombre" required="required" th:field="*{nombre}" maxlength="25">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" 
-                    name="apellidos" required="required" th:field="*{apellidos}">
+                    name="apellidos" required="required" th:field="*{apellidos}" maxlength="35">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="number" class="form-control" id="sueldo"  pattern="\d{1,5}" placeholder="Sueldo" 
