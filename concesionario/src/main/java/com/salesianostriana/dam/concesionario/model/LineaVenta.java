@@ -26,11 +26,10 @@ public class LineaVenta {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private double pvp;
-	private int cantidad;
-	
 	@ManyToOne
 	private Venta venta;
+	
+	private int cantidad;
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_linea_venta_producto"))

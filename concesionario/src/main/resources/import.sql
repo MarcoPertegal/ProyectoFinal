@@ -1,12 +1,16 @@
 insert into cliente (id, nombre, apellidos, email, telefono, password, direccion, municipio, dni, username, admin) values (1,'Endika', 'Prieto Sanchez', 'prieto@gmail.com', '677554564', '{bcrypt}$2a$10$Y1pFWGiCngth/nPamB.AGejRa0p7BWo8TIlbwrMnDj4Hus8DrZtuW', 'Virgen de Lujan', 'Sevilla', '49193054C', 'admin',true);
 insert into cliente (id, nombre, apellidos, email, telefono, password, direccion, municipio, dni, username, admin) values (2,'Francisco', 'Ramiro Fernandez', 'fernandez@gmail.com', '677552354','{bcrypt}$2a$10$G61/w8Ut8/GJkoSeCb.e.etANS3zZYfaSJjJItlizU2QA.bf36pwK', 'Avenida de la Paz', 'Sevilla', '49193684C', 'user',false);
+insert into cliente (id, nombre, apellidos, email, telefono, password, direccion, municipio, dni, username, admin) values (3,'Roberto', 'Pérez Sobrino', 'roberto@gmail.com', '673442354','{bcrypt}$2a$10$G61/w8Ut8/GJkoSeCb.e.etANS3zZYfaSJjJItlizU2QA.bf36pwK', 'Avenida de la Constitución', 'Sevilla', '49456784C', 'user',false);
+
 
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '70949233M', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
 insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '15340247M', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
 
-insert into venta (id, fecha, cliente_id, trabajador_id) values (1, '2021-02-12', 1, 1);
-insert into venta (id, fecha, cliente_id, trabajador_id) values (2, '2023-04-10', 2, 1);
-insert into venta (id, fecha, cliente_id, trabajador_id) values (3, '2023-08-29', 2, 2);
+
+
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (1, '2021-02-12', 20400, 2, 1);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (2, '2023-04-10', 12000, 3, 1);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (3, '2023-08-29', 4000, 3, 2);
 
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (1, 'yamaha', 'R1M', 'SUPERSPORT', 'Yamaha ha creado la R1M de competición utilizando algunas de las tecnologías más sofisticadas desarrolladas a partir de la ganadora M1 de MotoGP.', 20000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2022/YZF1000R1SPL/2022-Yamaha-YZF1000R1SPL-EU-Icon_Performance-Studio-001-03.jpg', '2022-05-12');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (2, 'yamaha', 'R3', 'SUPERSPORT', 'La carrocería estilizada y atlética de la R3 incorpora una toma de admisión de aire central inspirada en la emblemática máquina M1 de MotoGP® ganadora de Yamaha.', 12000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/YZF-R320/2023-Yamaha-YZF-R320-EU-Icon_Blue-Studio-001-03.jpg', '2022-05-20');
@@ -54,5 +58,10 @@ insert into accesorio (id, caracteristicas) values (20, 'Calota interna de densi
 insert into accesorio (id, caracteristicas) values (21, 'Guarda barbilla, deflector de respiración, juego de placas de mecanismo');
 insert into accesorio (id, caracteristicas) values (22, 'Calota multifibra AIM, Sistema EPS de absorción de impactos, Sistema de Bloqueo 360, Cierre de seguridad Micrométrico');
 
+insert into linea_venta (id, venta_id, producto_id, cantidad) values (1, 1, 1, 1);
+insert into linea_venta (id, venta_id, producto_id, cantidad) values (2, 1, 12, 2);
+insert into linea_venta (id, venta_id, producto_id, cantidad) values (3, 2, 2, 1);
+insert into linea_venta (id, venta_id, producto_id, cantidad) values (4, 2, 18, 2);
+insert into linea_venta (id, venta_id, producto_id, cantidad) values (5, 3, 21, 3);
 
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1050;
