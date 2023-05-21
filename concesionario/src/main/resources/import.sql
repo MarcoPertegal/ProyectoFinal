@@ -58,10 +58,4 @@ insert into accesorio (id, caracteristicas) values (20, 'Calota interna de densi
 insert into accesorio (id, caracteristicas) values (21, 'Guarda barbilla, deflector de respiración, juego de placas de mecanismo');
 insert into accesorio (id, caracteristicas) values (22, 'Calota multifibra AIM, Sistema EPS de absorción de impactos, Sistema de Bloqueo 360, Cierre de seguridad Micrométrico');
 
-insert into linea_venta (id, venta_id, producto_id, cantidad) values (1, 1, 1, 1);
-insert into linea_venta (id, venta_id, producto_id, cantidad) values (2, 1, 12, 2);
-insert into linea_venta (id, venta_id, producto_id, cantidad) values (3, 2, 2, 1);
-insert into linea_venta (id, venta_id, producto_id, cantidad) values (4, 2, 18, 2);
-insert into linea_venta (id, venta_id, producto_id, cantidad) values (5, 3, 21, 3);
-
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1050;

@@ -44,21 +44,21 @@
 										type="text" />
 								</td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
-										th:text="${element.key.precioBase}">$4.87</strong></td>
+										th:text="${element.key.precioBase + ' €'}">$4.87</strong></td>
 								<!-- Como se puede ver en el manual de Th y hablamos en clase, en th se pueden hacer operaciones básicas con variables
 	                        como en java, por lo que se puede multiplicar un valor por otro, como por ejemplo, aquí en precio por cantidad -->
 	
 								<td class="col-sm-1 col-md-1 text-center"><strong
-										th:text="${element.key.precioBase * element.value}">$14.61</strong></td>
+										th:text="${element.key.precioBase * element.value + ' €'}"></strong></td>
 								<td class="col-sm-1 col-md-1">
-	
-								
-								<button type="button" class="btn btn-danger">
-										<span class="glyphicon glyphicon-remove"></span> Remove
+										
+								<a href="#" th:href="@{/borrarProducto/{id}(id=${element.key.id})}">
+									<button type="button" class="btn">
+				  						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Borrar</span>
 									</button>
+								</a>
 								</td>
 							</tr>
-							<!--
 							<tr>
 								<td>   </td>
 								<td>   </td>
@@ -67,7 +67,7 @@
 									<h3>Total</h3>
 								</td>
 								<td class="text-right">
-									<h3><strong th:text="${total_carrito}">100€</strong></h3>
+									<h3><strong th:text="${total_carrito + ' €'}"></strong></h3>
 								</td>
 							</tr>
 							<tr>
@@ -76,16 +76,15 @@
 								<td>   </td>
 								<td>
 									<button type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+										<span class="glyphicon glyphicon-shopping-cart">Continuar Comprando</span> 
 									</button>
 								</td>
 								<td>
 									<button type="button" class="btn btn-success">
-										Checkout <span class="glyphicon glyphicon-play"></span>
+										<span class="glyphicon glyphicon-play">Finalizar Compra</span>
 									</button>
 								</td>
 							</tr>
-							-->
 						</tbody>
 					</table>
 				</div>
