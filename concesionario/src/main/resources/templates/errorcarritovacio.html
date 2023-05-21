@@ -1,0 +1,21 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Carrito Vacio - TU MOTO</title>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/nav::nav}"></nav>    
+    <main>
+	    <div class="d-flex justify-content-center align-items-center">
+	        <div class="containerException">
+	            <div class="card">
+	                <div class="card-body">
+	                    <h5 class="card-title">Tú bolsa de la compra está vacía.</h5>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</main>
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>
