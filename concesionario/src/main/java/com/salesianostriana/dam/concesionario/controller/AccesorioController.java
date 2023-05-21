@@ -30,21 +30,17 @@ public class AccesorioController {
 	
 	
 	@GetMapping("/")
-	public String accesorioList(Model model) {
-		
+	public String accesorioList(Model model) {		
 		model.addAttribute("listaAccesorios", accesorioService.findAll());
-
 		model.addAttribute("searchForm", new SearchBean());
 		return "accesorios";
 	}
 	
 	@PostMapping("/search")
-	  public String searchAccesorio(@ModelAttribute("searchForm") SearchBean searchBean,
-			 Model model){
+	public String searchAccesorio(@ModelAttribute("searchForm") SearchBean searchBean, Model model){
 	  	model.addAttribute("listaAccesorios", accesorioService.findByNombre(searchBean.getSearch()));
-	  
-	  return "accesorios";
-	  }
+	  	return "accesorios-lista";
+	}
 	
 	//METODOS PARA ADMIN
 	@GetMapping("/admin")

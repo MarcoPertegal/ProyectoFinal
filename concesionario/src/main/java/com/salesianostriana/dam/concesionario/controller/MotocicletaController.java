@@ -36,12 +36,10 @@ public class MotocicletaController {
 	}
 	
 	@PostMapping("/search")
-	  public String searchMotocicleta(@ModelAttribute("searchForm") SearchBean searchBean,
-			 Model model){
-	  	model.addAttribute("listaMotocicletas", motocicletaService.findByNombre(searchBean.getSearch()));
-	  
-	  return "motocicletas";
-	  }
+	public String searchMotocicleta(@ModelAttribute("searchForm") SearchBean searchBean, Model model) {
+	    model.addAttribute("listaMotocicletas", motocicletaService.findByNombre(searchBean.getSearch()));
+	    return "motocicletas-lista";
+	}
 	
 	//METODOS PARA ADMIN
 	@GetMapping("/admin")
