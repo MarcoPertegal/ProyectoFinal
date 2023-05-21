@@ -34,10 +34,11 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long id;
-
 	
-	protected String marca, nombre, descripcion, precioBase;
+	protected String marca, nombre, descripcion;
 	protected String imagen;
+	
+	protected double precioBase;
 	
 	@Enumerated(EnumType.STRING)
 	Categoria categoria;
