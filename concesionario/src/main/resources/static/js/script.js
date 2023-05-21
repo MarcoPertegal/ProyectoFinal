@@ -79,24 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var cookiesAccepted = localStorage.getItem("cookiesAccepted");
-
-    if (!cookiesAccepted) {
-        var modal = new bootstrap.Modal(document.getElementById("cookiesModal"), {
-            backdrop: "static",
-            keyboard: false
-        });
-        modal.show();
-    }
-
-    var acceptCookiesBtn = document.getElementById("acceptCookiesBtn");
-    if (acceptCookiesBtn) {
-        acceptCookiesBtn.addEventListener("click", function() {
-            localStorage.setItem("cookiesAccepted", true);
-        });
-    }
-});
 
 
 
