@@ -366,3 +366,6 @@ tbody a{
 tbody a:hover{
 	color: white;
 }
+#venta{
+	margin-bottom: 0px !important;
+}

@@ -18,7 +18,7 @@
 				</div>
 			</div>
 		</div>
-        <section>
+        <section data-aos="fade-right">
             <div class="row">
                 <div class="col-xl-1">
                 </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section data-aos="fade-left">
             <div class="row">
                 <div class="col-12 col-md-5 col-xl-5 img order-md-1">
                     <img src="../img/motoVerdeContacto.jpg" alt="Fotografía Motocicleta">
@@ -92,12 +92,16 @@
                 </div>
             </div>
         </div>
-        <div class="dondeEstamos">
+        <div data-aos="fade-up" class="dondeEstamos">
             <h1>¿Donde estamos?</h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1068.2999734041045!2d-5.962905787022038!3d37.42045341913744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1269212899fb17%3A0x56aec12553b3acdd!2sPlaza%20de%20las%20Escritoras!5e0!3m2!1ses!2ses!4v1682614725236!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
-    
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
+    
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	  <script>
+	    AOS.init();
+	  </script>
 </body>
 </html>

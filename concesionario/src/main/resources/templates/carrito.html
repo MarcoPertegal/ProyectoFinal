@@ -35,9 +35,9 @@
 										type="text" />
 								</td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
-										th:text="${element.key.precioBase + ' €'}">$4.87</strong></td>
+										th:text="${element.key.precioBase + '€'}">$4.87</strong></td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
-										th:text="${element.key.precioBase * element.value + ' €'}"></strong></td>
+										th:text="${element.key.precioBase * element.value + '€'}"></strong></td>
 								<td class="col-sm-1 col-md-1">
 										
 								<a href="#" th:href="@{/borrarProducto/{id}(id=${element.key.id})}">
@@ -53,26 +53,26 @@
 									<h3>Total</h3>
 								</td>
 								<td colspan="2" class="text-right">
-									<h4><strong th:text="${total_carrito + ' €'}"></strong></h4>
+									<h4><strong th:text="${total_carrito + '€'}"></strong></h4>
 								</td>
 								
 							</tr>
 							<tr>
 								<td>   </td>
-								<td>   </td>
-								<td>   </td>
-								<td>
-									<button type="button" class="btn btn-default">Continuar Comprando</button>
+								<td >   </td>
+								<td>	</td>
+								<td colspan="2"> 
+									<button type="button" class="btn" onclick="window.history.go(-2);">Continuar Comprando</button> 
 								</td>
-								<td>
+								
+								<td>	
 									<a href="#" th:href="@{/carrito/finalizarCompra}">
-										<button type="button" class="btn">
+										<button type="button" class="btn btn-custom">
 					  						<form method="POST" action="#" th:action="@{/carrito/finalizarCompra}" id="venta">
 												  <a href="javascript:document.getElementById('venta').submit()">Finalizar Compra</a>
 					  						</form>
 										</button>
 									</a>
-									 
 								</td>
 							</tr>
 						</tbody>
