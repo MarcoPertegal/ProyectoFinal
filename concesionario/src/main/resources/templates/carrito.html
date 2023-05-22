@@ -21,15 +21,6 @@
 							</tr>
 						</thead>
 						<tbody>
-	
-							<!-- Bucle que va sacando los distintos elementos guardados en el carrito. Recordemos que es
-	                un HashMap cuya clave es un  producto y cuyo valor es la cantidad de productos, por eso
-	                vamos sacando un elemento del carrito, esto significa que element, es tipo Entry, es decir,
-	                pareja clave-valor "entera" (producto-cantidad), por todo esto, cuando queremos, por ejemplo, 
-	                mostrar el nombre del producto, accedemos mediante: 
-	                ${element.key.nombre} ya que sacamos la clave de la pareja "entry" que es un producto, 
-	                y a su vez, accedemos al tributo nombre de ese producto -->
-	
 							<tr th:each="element : ${productos.entrySet()}">
 								<td class="col-sm-8 col-md-6">
 											<img
@@ -45,17 +36,12 @@
 								</td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
 										th:text="${element.key.precioBase + ' €'}">$4.87</strong></td>
-								<!-- Como se puede ver en el manual de Th y hablamos en clase, en th se pueden hacer operaciones básicas con variables
-	                        como en java, por lo que se puede multiplicar un valor por otro, como por ejemplo, aquí en precio por cantidad -->
-	
 								<td class="col-sm-1 col-md-1 text-center"><strong
 										th:text="${element.key.precioBase * element.value + ' €'}"></strong></td>
 								<td class="col-sm-1 col-md-1">
 										
 								<a href="#" th:href="@{/borrarProducto/{id}(id=${element.key.id})}">
-									<button type="button" class="btn">
-				  						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Borrar</span>
-									</button>
+									<button type="button" class="btn">Borrar</button>
 								</a>
 								</td>
 							</tr>
@@ -66,23 +52,27 @@
 								<td>
 									<h3>Total</h3>
 								</td>
-								<td class="text-right">
-									<h3><strong th:text="${total_carrito + ' €'}"></strong></h3>
+								<td colspan="2" class="text-right">
+									<h4><strong th:text="${total_carrito + ' €'}"></strong></h4>
 								</td>
+								
 							</tr>
 							<tr>
 								<td>   </td>
 								<td>   </td>
 								<td>   </td>
 								<td>
-									<button type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-shopping-cart">Continuar Comprando</span> 
-									</button>
+									<button type="button" class="btn btn-default">Continuar Comprando</button>
 								</td>
 								<td>
-									<button type="button" class="btn btn-success">
-										<span class="glyphicon glyphicon-play">Finalizar Compra</span>
-									</button>
+									<a href="#" th:href="@{/carrito/finalizarCompra}">
+										<button type="button" class="btn">
+					  						<form method="POST" action="#" th:action="@{/carrito/finalizarCompra}" id="venta">
+												  <a href="javascript:document.getElementById('venta').submit()">Finalizar Compra</a>
+					  						</form>
+										</button>
+									</a>
+									 
 								</td>
 							</tr>
 						</tbody>

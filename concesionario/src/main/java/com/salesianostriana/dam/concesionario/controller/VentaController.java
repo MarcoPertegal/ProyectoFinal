@@ -1,20 +1,20 @@
 package com.salesianostriana.dam.concesionario.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.salesianostriana.dam.concesionario.service.AccesorioService;
 import com.salesianostriana.dam.concesionario.service.MotocicletaService;
 import com.salesianostriana.dam.concesionario.service.ProductoService;
 import com.salesianostriana.dam.concesionario.service.VentaService;
 import com.salesianostriana.dam.concesionario.exception.CarritoVacioException;
-import com.salesianostriana.dam.concesionario.model.Producto;
+import com.salesianostriana.dam.concesionario.model.Cliente;
 
 
 @Controller
@@ -56,17 +56,15 @@ public class VentaController {
 	}
 	 
 	@ModelAttribute("total_carrito")
-	public Double totalCarrito () {
+	public Double mostrartotalCarrito () {
 	    	
-		Map <Producto,Integer> carrito=ventaService.getProductsInCart();
-	    double total=0.0;
-	    if (carrito !=null) {
-	        for (Producto p: carrito.keySet()) {
-	        	total+=p.getPrecioBase()*carrito.get(p);
-	        }
-	        return total;
-	    }
-	    return 0.0;
+		return ventaService.totalCarrito();
+	}
+	
+	@PostMapping("/carrito/finalizarCompra")
+	public String finalizarCompra(@AuthenticationPrincipal Cliente cliente) {
+		ventaService.crearVenta(cliente);
+		return "compraFinalizada";
 	}
 
 	 

@@ -6,58 +6,72 @@
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
     
-    
     <main id="listadoCliente">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar bg-secondary">
-				<ul class="nav nav-sidebar mt-3">
-					<div class="d-flex mt-4">
-						<form action="#" th:action="@{/motocicleta/search}" th:object="${searchForm}" method="POST">
-						<input type="text" class="form-control" name="nombre" placeholder="Buscar Por Nombre" th:field="*{search}" />
-						<button class="btn" type="submit">
-							<i class="bi bi-search"></i>
-						</button>
-						</form>
-					</div>
-				</ul>
-			</div>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar bg-secondary">
+                <ul class="nav nav-sidebar mt-3">
+                    <div class="d-flex mt-4">
+                        <form id="formulario" action="#" th:action="@{/motocicleta/search}" th:object="${searchForm}" method="POST">
+                            <input type="text" class="form-control" id="entrada" name="search" placeholder="Buscar Por Nombre" th:field="*{search}" />
+                        </form>
+                    </div>
+                </ul>
+            </div>
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mt-3 mb-5">
-				<div class="row">
-					<div class="col-sm-3" th:each="motocicleta : ${listaMotocicletas}">
-						<a href="#" th:href="@{/motocicleta/{id}(id=${motocicleta.id})}">
-							<div class="col-item">
-								<div class="photo">
-									<img src="http://placehold.it/350x260"
-										th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
-										class="img-responsive" alt="a" />
-								</div>
-								<div class="info">
-									<div class="row">
-
-										<div class="price col-md-12">
-											<h5 th:text="${#strings.abbreviate(motocicleta.nombre,65)}">Nombre</h5>
-											<div class="price-text-color">
-												<span th:text="${#numbers.formatCurrency(motocicleta.precioBase)}">10</span>
-											</div>
-											<div class="description-text-color">
-												<span th:text="${#strings.abbreviate(motocicleta.descripcion,170)}"></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</main>
-    
-    
-    
+            <div id="productosContainer" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mt-3 mb-5">
+                <div class="row">
+                    <div class="col-sm-3" th:each="motocicleta : ${listaMotocicletas}">
+                        <a href="#" th:href="@{/motocicleta/{id}(id=${motocicleta.id})}">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260"
+                                        th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
+                                        class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5 th:text="${#strings.abbreviate(motocicleta.nombre,65)}">Nombre</h5>
+                                            <div class="price-text-color">
+                                                <span th:text="${#numbers.formatCurrency(motocicleta.precioBase)}">10</span>
+                                            </div>
+                                            <div class="description-text-color">
+                                                <span th:text="${#strings.abbreviate(motocicleta.descripcion,170)}"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>  
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
-</body>
+    <script>
+        var entrada = document.getElementById("entrada");
+        var formulario = document.getElementById("formulario");
+
+        entrada.addEventListener("keydown", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+
+        entrada.addEventListener("input", function() {
+            var searchValue = entrada.value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", formulario.action, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var motocicletasContainer = document.getElementById("productosContainer");
+                    motocicletasContainer.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("search=" + encodeURIComponent(searchValue));
+        });
+    </script>
 </html>

@@ -35,7 +35,7 @@ public class Trabajador {
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="trabajador", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy="trabajador", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Venta> listaVentas = new ArrayList<>();
 	

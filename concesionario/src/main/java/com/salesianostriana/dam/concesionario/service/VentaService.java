@@ -9,9 +9,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.salesianostriana.dam.concesionario.model.Cliente;
 import com.salesianostriana.dam.concesionario.model.LineaVenta;
 import com.salesianostriana.dam.concesionario.model.Producto;
 import com.salesianostriana.dam.concesionario.model.Trabajador;
@@ -67,7 +69,25 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
         return Collections.unmodifiableMap(listaLineaVentas);
     }
 	
-	public void SetCarrito() {
+	
+	public Double totalCarrito () {
+		Map <Producto,Integer> carrito=getProductsInCart();
+	    double total=0.0;
+	    double porcentDescuento = 15;
+	    double topeDescuento = 20000;
+	    if (carrito !=null) {
+	        for (Producto p: carrito.keySet()) {
+	        	total+=p.getPrecioBase()*carrito.get(p);
+	        }
+	        if (total > topeDescuento) {
+				return  total -= (total/100)*porcentDescuento;
+			}
+	        return total;
+	    }
+	    return 0.0;
+	}
+	
+	public void crearVenta(@AuthenticationPrincipal Cliente cliente) {
 	    Venta v = new Venta();
 	    for (Producto p : listaLineaVentas.keySet()) {
 	        v.addLineaVenta(
@@ -76,10 +96,11 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	        		.cantidad(listaLineaVentas.get(p))
 	        		.build()
 	        );
-
 	    }
 	    v.setFecha(LocalDate.now());
-	    v.setTotal(0);
+	    v.setTotal(totalCarrito());
+	    v.setCliente(cliente);
+	    v.setTrabajador(null);
 	    save(v);
 	    
 	    listaLineaVentas.clear();
