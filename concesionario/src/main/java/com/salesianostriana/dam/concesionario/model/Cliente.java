@@ -43,7 +43,7 @@ public class Cliente implements UserDetails {
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="cliente", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy="cliente", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Venta> listaVentas = new ArrayList<>();
 	

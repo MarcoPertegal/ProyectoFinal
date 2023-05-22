@@ -11,8 +11,8 @@
             <div class="col-sm-3 col-md-2 sidebar bg-secondary">
                 <ul class="nav nav-sidebar mt-3">
                     <div class="d-flex mt-4">
-                        <form id="searchForm" action="#" th:action="@{/motocicleta/search}" th:object="${searchForm}" method="POST">
-                            <input type="text" class="form-control" id="searchInput" name="search" placeholder="Buscar Por Nombre" th:field="*{search}" />
+                        <form id="formulario" action="#" th:action="@{/motocicleta/search}" th:object="${searchForm}" method="POST">
+                            <input type="text" class="form-control" id="entrada" name="search" placeholder="Buscar Por Nombre" th:field="*{search}" />
                         </form>
                     </div>
                 </ul>
@@ -50,30 +50,23 @@
     </main>  
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
     <script>
-        // Obtener referencia al campo de entrada de texto y al formulario
-        var searchInput = document.getElementById("searchInput");
-        var searchForm = document.getElementById("searchForm");
+        var entrada = document.getElementById("entrada");
+        var formulario = document.getElementById("formulario");
 
-        // Agregar un evento de escucha al campo de entrada de texto
-        searchInput.addEventListener("keydown", function(event) {
-            // Verificar si la tecla presionada es "Enter"
+        entrada.addEventListener("keydown", function(event) {
             if (event.keyCode === 13) {
-                event.preventDefault(); // Bloquear la acción predeterminada (en este caso, el envío del formulario)
+                event.preventDefault();
             }
         });
 
-        // Agregar un evento de escucha al campo de entrada de texto
-        searchInput.addEventListener("input", function() {
-            // Obtener el valor actual del campo de entrada de texto
-            var searchValue = searchInput.value;
+        entrada.addEventListener("input", function() {
+            var searchValue = entrada.value;
 
-            // Realizar una solicitud AJAX para buscar motocicletas por nombre
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", searchForm.action, true);
+            xhr.open("POST", formulario.action, true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Actualizar el contenido de la lista de motocicletas con la respuesta de la solicitud AJAX
                     var motocicletasContainer = document.getElementById("productosContainer");
                     motocicletasContainer.innerHTML = xhr.responseText;
                 }

@@ -40,10 +40,10 @@
 							<td th:text="${trabajador.sueldo}"></td>
 							
 							<td><a href="#" th:href="@{/admin/trabajador/editar/{id}(id=${trabajador.id})}"
-								class="btn btn-custom">Editar</a>
+								class="btn">Editar</a>
 							
 							<td><a href="#" th:href="@{/admin/trabajador/borrar/{id}(id=${trabajador.id})}"
-								class="btn">Borrar</a>
+								class="btn btn-custom">Borrar</a>
 						</tr>
 					</tbody>
 				</table>

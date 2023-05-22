@@ -50,7 +50,7 @@ public class Producto {
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="producto", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy="producto", fetch = FetchType.EAGER)
 	private List<LineaVenta> listaLineaVenta = new ArrayList<>();
 	
 }

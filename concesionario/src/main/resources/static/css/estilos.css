@@ -351,4 +351,18 @@ tbody td img{
 .containerException .card{
 	background-color: #ffecb5;
 	color: #664d03;
-} 
+}
+#productosContainer{
+	margin-bottom: 120px;
+	min-height: 350px;
+}
+table text-right{
+	width: 120%;
+}
+tbody a{
+	text-decoration: none;
+	color: white;
+}
+tbody a:hover{
+	color: white;
+}
