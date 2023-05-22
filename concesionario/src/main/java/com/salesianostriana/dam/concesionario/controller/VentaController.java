@@ -16,8 +16,6 @@ import com.salesianostriana.dam.concesionario.exception.CarritoVacioException;
 import com.salesianostriana.dam.concesionario.formbeans.SearchBean;
 import com.salesianostriana.dam.concesionario.model.Cliente;
 import com.salesianostriana.dam.concesionario.model.Venta;
-import com.salesianostriana.dam.concesionario.service.AccesorioService;
-import com.salesianostriana.dam.concesionario.service.MotocicletaService;
 import com.salesianostriana.dam.concesionario.service.ProductoService;
 import com.salesianostriana.dam.concesionario.service.VentaService;
 
@@ -32,7 +30,7 @@ public class VentaController {
 	private ProductoService productoService;
 	
 	@Autowired
-    public VentaController(VentaService ventaService, MotocicletaService motocicletaService, AccesorioService accesorioService) {
+    public VentaController(VentaService ventaService, ProductoService productoService) {
         this.ventaService = ventaService;
         this.productoService = productoService;
     }
@@ -91,7 +89,18 @@ public class VentaController {
 	    List<Venta> ventas = ventaService.findByFechaBetween(fechaInicio, fechaFin);
 	    model.addAttribute("listaVentas", ventas);
 
+	    double totalVentas = calcularTotalVentas(ventas);
+	    model.addAttribute("totalVentas", totalVentas);
+
 	    return "admin/listVenta";
+	}
+	
+	private double calcularTotalVentas(List<Venta> ventas) {
+	    double total = 0.0;
+	    for (Venta venta : ventas) {
+	        total += venta.getTotal();
+	    }
+	    return total;
 	}
 	 
 }
