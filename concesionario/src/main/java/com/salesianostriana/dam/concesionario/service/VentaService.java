@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -69,7 +70,7 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
         return Collections.unmodifiableMap(listaLineaVentas);
     }
 	
-	
+	/*
 	public Double totalCarrito () {
 		Map <Producto,Integer> carrito=getProductsInCart();
 	    double total=0.0;
@@ -80,8 +81,20 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	        	total+=p.getPrecioBase()*carrito.get(p);
 	        }
 	        if (total > topeDescuento) {
-				return  total -= (total/100)*porcentDescuento;
+				total -= (total/100)*porcentDescuento;
 			}
+	        return total;
+	    }
+	    return 0.0;
+	}*/
+	
+	public Double totalCarrito () {
+		Map <Producto,Integer> carrito=getProductsInCart();
+	    double total=0.0;
+	    if (carrito !=null) {
+	        for (Producto p: carrito.keySet()) {
+	        	total+=p.getPrecioBase()*carrito.get(p);
+	        }
 	        return total;
 	    }
 	    return 0.0;
@@ -104,6 +117,10 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	    save(v);
 	    
 	    listaLineaVentas.clear();
+	}
+	
+	public List<Venta> findByFechaBetween(LocalDate fechaInicio, LocalDate fechaFin) {
+	    return repositorio.findVentasByFechaBetween(fechaInicio, fechaFin);
 	}
 	
 

@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.concesionario.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,7 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
 	
 	@Query("select count(v) from Venta v where v.trabajador = ?1")
 	public int findNumTrabajadoresByVenta(Trabajador trabajador);
+	
+	 @Query("SELECT v FROM Venta v WHERE v.fecha BETWEEN ?1 AND ?2")
+	 public List<Venta> findVentasByFechaBetween(LocalDate fechaInicio, LocalDate fechaFin);
 }

@@ -1,0 +1,78 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <title>Gestión Venta - TU MOTO</title>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/navAdmin::navAdmin}"></nav>    
+    <main id="listadoConBuscar">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar bg-secondary">
+			    <ul class="nav nav-sidebar mt-3">
+				    <div class="d-flex mt-4">
+				        <form action="/admin/venta/search" th:action="@{/admin/venta/search}" method="POST">
+				            <label for="fechaInicio">Fecha inicio:</label>
+				            <input type="date" id="fechaInicio" name="fechaInicio" placeholder="Fecha inicio" th:value="${searchForm.fechaInicio}" />
+				            <br><br>
+				            <label for="fechaFin">Fecha fin:</label>
+				            <input type="date" id="fechaFin" name="fechaFin" placeholder="Fecha fin" th:value="${searchForm.fechaFin}" />
+				            <br><br>
+				            <button class="btn" type="submit">Buscar</button>
+				        </form>
+				    </div>
+				</ul>
+			    
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mt-3 mb-5">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Número de venta</th>
+							<th>Fecha</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+					    <tr th:each="venta, row : ${listaVentas}">
+					        <td th:text="${row.index + 1}"></td>
+					        <td th:text="${venta.fecha}"></td>
+					        <td th:text="${venta.total}"></td>
+					        <td>
+					            <table>
+					                <thead>
+					                    <tr>
+					                        <th>Producto</th>
+					                        <th>Cantidad</th>
+					                        <th>Precio</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    <tr th:each="lineaVenta : ${venta.listaLineaVenta}">
+					                        <td th:text="${lineaVenta.producto.nombre}"></td>
+					                        <td th:text="${lineaVenta.cantidad}"></td>
+					                        <td th:text="${lineaVenta.producto.precioBase}"></td>
+					                    </tr>
+					                </tbody>
+					            </table>
+					        </td>
+					    </tr>
+					    <tr>
+								<td>   </td>
+								<td>   </td>
+								<td>   </td>
+								<td>
+									<h3>Total</h3>
+								</td>
+								<!--
+								<td class="col-sm-1 col-md-1 text-center"><strong
+									th:text="${total += venta.total}"></strong></td>-->		
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+    </main>
+    <footer th:replace="~{fragmentos/footer::footer}"></footer>
+</body>
+</html>
