@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-2">
                 </div>
-                <div class="col-8">
+                <div data-aos="fade-right" class="col-8">
                     <p><span>¿Quieres probar tu moto antes de comprarla?</span></p>
                     <p>Puedes solicitar una prueba de tu moto en nuestro concesionario para asegurarte de que todo funciona como pensabas. 
                     Contacta con nosotros via correo.</p>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div data-aos="fade-up" data-aos-delay="50" class="row">
                 <div class="col-12 col-md-6 col-lg-4 col-xl-4 mx-auto">
                     <div class="card" style="width:400px">
                         <img class="card-img-top" src="../img/nuevoArticulo1.jpg" alt="Imagen motocicleta">
@@ -69,7 +69,11 @@
                 </div>
         </div>
     </main>
-    
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
+    
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	  <script>
+	    AOS.init();
+	  </script>
 </body>
 </html>
