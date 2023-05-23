@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.salesianostriana.dam.concesionario.formbeans.SearchBean;
 import com.salesianostriana.dam.concesionario.model.Motocicleta;
 import com.salesianostriana.dam.concesionario.service.MotocicletaService;
+import com.salesianostriana.dam.concesionario.service.VentaService;
 
 @Controller
 @RequestMapping("/motocicleta")
@@ -26,6 +27,9 @@ public class MotocicletaController {
 	
 	@Autowired
 	private MotocicletaService motocicletaService;
+	
+	@Autowired
+	private VentaService ventaService;
 	
 	
 	@GetMapping("/")
@@ -41,7 +45,7 @@ public class MotocicletaController {
 	    return "motocicletas-lista";
 	}
 	
-	//METODOS PARA ADMIN
+
 	@GetMapping("/admin")
 	public String listMotocicleta(Model model) {
 		model.addAttribute("listaMotocicletas", motocicletaService.findAll());
@@ -80,10 +84,12 @@ public class MotocicletaController {
 	    Motocicleta motocicleta = optionalMotocicleta.get();
 	    
 	    if (optionalMotocicleta.isPresent()) {
-	    	motocicletaService.delete(motocicleta);
+	    	if (ventaService.numeroDeProductoEnVenta(motocicleta) == 0) {
+	    		motocicletaService.delete(motocicleta);
+	    	} else {
+	    	return "redirect:/motocicleta/admin/?error=true";
+	    	}
 	    }
-	    
-	    return "redirect:/motocicleta/admin";
-	    
+	    return "redirect:/motocicleta/admin"; 
 	}
 }

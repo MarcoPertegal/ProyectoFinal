@@ -5,9 +5,7 @@
 </head>
 <body>
     <nav th:replace="~{fragmentos/nav::nav}"></nav>    
-    
-    
-    <main id="listadoCliente">
+    <main id="listadoConBuscar">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar bg-secondary">
 				<ul class="nav nav-sidebar mt-3">
@@ -26,12 +24,11 @@
 							<div class="col-item">
 								<div class="photo">
 									<img src="http://placehold.it/350x260"
-										th:src="${#strings.isEmpty(accesorio.imagen)} ? 'http://placehold.it/350x260' : ${accesorio.imagen}"
-										class="img-responsive" alt="a" />
+										th:src="${#strings.isEmpty(accesorio.imagen)} ? 'http://placehold.it/350x260' : 
+										${accesorio.imagen}" class="img-responsive" alt="Imagen accesorio" />
 								</div>
 								<div class="info">
 									<div class="row">
-
 										<div class="price col-md-12">
 											<h5 th:text="${#strings.abbreviate(accesorio.nombre,65)}">Nombre</h5>
 											<div class="price-text-color">

@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-11 col-md-5 col-xl-5 mx-auto d-flex justify-content-end">
                 <img src="http://placehold.it/400x400" alt=""
-					th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : ${motocicleta.imagen}"
-					 />
+					th:src="${#strings.isEmpty(motocicleta.imagen)} ? 'http://placehold.it/350x260' : 
+					${motocicleta.imagen}"/>
             </div>
             <div class="col-11 col-md-5 col-xl-5 mx-auto">
                 <h3 th:text=${motocicleta.nombre}></h3>

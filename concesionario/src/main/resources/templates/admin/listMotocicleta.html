@@ -9,6 +9,10 @@
         <div class="container">
 		<div class="row">
 			<div class="col-md-offset-1 col-md-12">
+				<div class="alert alert-warning" role="alert" th:if="${param.error}">
+    				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    				<span>No se pueden eliminar motocicletas presentes en ventas finalizadas.</span>
+				</div>
 				<div class="pull-right">
 					<a href="formMotocicleta.html" th:href="@{/motocicleta/admin/nuevo}"
 						class="btn">Nueva Motocicleta</a>

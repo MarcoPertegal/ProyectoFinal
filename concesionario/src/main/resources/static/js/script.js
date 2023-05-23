@@ -28,22 +28,22 @@ function validarFormularioTrabajador() {
     var telefono = document.getElementById('telefono').value;
     var dni = document.getElementById('dni').value;
 
-    var comprobar = /^[A-Za-z\s]+$/;
-    if (!comprobar.test(nombre) || !comprobar.test(apellidos)) {
-        alert('El nombre y los apellidos no pueden contener números.');
-        return false;
-    }
+    var comprobar = /^[A-Za-záéíóúÁÉÍÓÚ\s]+$/;
+	if (!comprobar.test(nombre) || !comprobar.test(apellidos)) {
+	    alert('El nombre y los apellidos no pueden contener números.');
+	    return false;
+	}
 
     if (sueldo < 0 || sueldo > 100000) {
         alert('El sueldo debe ser un valor positivo y no puede superar los 100000.');
         return false;
     }
 
-    comprobar = /^[0-9]{9,11}$/;
-    if (!comprobar.test(telefono)) {
-        alert('El teléfono debe contener entre 9 y 11 números.');
-        return false;
-    }
+    comprobar = /^[\d\s]{8,12}$/;
+	if (!comprobar.test(telefono)) {
+	    alert('El teléfono debe contener entre 8 y 12 números.');
+	    return false;
+	}
 
     var numero = dni.substr(0, dni.length - 1);
     var letra = dni.substr(dni.length - 1, 1);

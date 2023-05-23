@@ -3,14 +3,14 @@ insert into cliente (id, nombre, apellidos, email, telefono, password, direccion
 insert into cliente (id, nombre, apellidos, email, telefono, password, direccion, municipio, dni, username, admin) values (3,'Roberto', 'Pérez Sobrino', 'roberto@gmail.com', '673442354','{bcrypt}$2a$10$G61/w8Ut8/GJkoSeCb.e.etANS3zZYfaSJjJItlizU2QA.bf36pwK', 'Avenida de la Constitución', 'Sevilla', '49456784C', 'user',false);
 
 
-insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '70949233M', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
-insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '15340247M', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
+insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '78464492S', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
+insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '95754388Y', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
 
 
 
-insert into venta (id, fecha, total, cliente_id, trabajador_id) values (1, '2021-02-12', 20400, 2, 1);
-insert into venta (id, fecha, total, cliente_id, trabajador_id) values (2, '2023-04-10', 12000, 3, 1);
-insert into venta (id, fecha, total, cliente_id, trabajador_id) values (3, '2023-08-29', 4000, 3, 2);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (1, '2021-02-12', 8250, 2, 1);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (2, '2023-04-10', 530.99, 3, 1);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (3, '2023-08-29', 1110.95, 3, 2);
 
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (1, 'yamaha', 'R1M', 'SUPERSPORT', 'Yamaha ha creado la R1M de competición utilizando algunas de las tecnologías más sofisticadas desarrolladas a partir de la ganadora M1 de MotoGP.', 20000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2022/YZF1000R1SPL/2022-Yamaha-YZF1000R1SPL-EU-Icon_Performance-Studio-001-03.jpg', '2022-05-12');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (2, 'yamaha', 'R3', 'SUPERSPORT', 'La carrocería estilizada y atlética de la R3 incorpora una toma de admisión de aire central inspirada en la emblemática máquina M1 de MotoGP® ganadora de Yamaha.', 12000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/YZF-R320/2023-Yamaha-YZF-R320-EU-Icon_Blue-Studio-001-03.jpg', '2022-05-20');
@@ -23,9 +23,9 @@ insert into producto (id, marca, nombre, categoria, descripcion, precio_base, im
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (9, 'honda', 'CRF450R', 'OFFROAD' ,'Llevamos 50 años compitiendo en motocross. Altos y bajos, lo hemos tenido todo y hemos asumido cada momento. Ganar el fin de semana es lo que nos impulsa.', 8900.99, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/YZ250LCSV/2023-Yamaha-YZ250LCSV-EU-Monster_Black-Studio-001-03.jpg', '2022-06-28');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (10, 'yamaha', 'YZ450F', 'OFFROAD' ,'Esta es la Yamaha de motocross que estabas esperando. Más ligera, más rápida y más potente, la nueva YZ450F es un nuevo tipo de máquina que ha sido desarrollada contigo, el piloto, como principal objetivo en mente.', 8000, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/YZ250F/2023-Yamaha-YZ250F-EU-Icon_Blue-Studio-001-03.jpg', '2022-07-16');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (11, 'yamaha', 'TMAX', 'SCOOTER' ,'El TMAX es el rey indiscutible de los scooters. Es el scooter deportivo más vendido en Europa desde el lanzamiento del modelo original en 2001.', 5900.99, 'https://cdn2.yamaha-motor.eu/prod/product-assets/2023/XP500A/2023-Yamaha-XP500A-EU-Icon_Blue-Studio-001-03.jpg', '2022-07-17');
-insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (12, 'yamaha', 'Bolsa interior para Top Case', 'EQUIPO' ,'Bolsa flexible que se ajusta al interior del Top Case Yamaha de 34 L', 299.99, 'https://cdn2.yamaha-motor.eu/prod/accessories/LIFESTYLE-LUGGAGE/Lifestyle-Luggage/T18-HD009-C0-00-WR-dry-bag-big-red-EU-Studio-001_Tablet.jpg', '2022-07-23');
+insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (12, 'yamaha', 'Bolsa interior', 'EQUIPO' ,'Bolsa flexible que se ajusta al interior del Top Case Yamaha de 34 L', 299.99, 'https://cdn2.yamaha-motor.eu/prod/accessories/LIFESTYLE-LUGGAGE/Lifestyle-Luggage/T18-HD009-C0-00-WR-dry-bag-big-red-EU-Studio-001_Tablet.jpg', '2022-07-23');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (13, 'yamaha', 'Calcetines', 'ROPA','Calcetines largos para botas MX con diseño Yamaha Racing. ¡Un accesorio esencial para cualquier aventura MX!', 19.95, 'https://cdn2.yamaha-motor.eu/prod/accessories/APPAREL/Apparel/B20-HF105-E1-LX-Offroad-Boot-Socks-Male-EU-Studio-001_Tablet.jpg', '2022-07-24');
-insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (14, 'Alpinestars', 'Chaqueta GP Plus R V2', 'ROPA', 'Chaqueta de cuero para motocicleta con protecciones desmontables y paneles de malla para mayor ventilación', 395.95, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A21-BJ102-B4-0L-MT-Winter-jacket--Male-EU-Studio-006_Tablet.jpg', '2022-07-25');
+insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (14, 'Alpinestars', 'Chaqueta GP Plus', 'ROPA', 'Chaqueta de cuero para motocicleta con protecciones desmontables y paneles de malla para mayor ventilación', 395.95, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A21-BJ102-B4-0L-MT-Winter-jacket--Male-EU-Studio-006_Tablet.jpg', '2022-07-25');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (15, 'Shoei', 'X-Fourteen', 'CASCO', 'Casco de moto integral de alta gama con una carcasa externa de fibra de vidrio y carbono para la máxima protección', 530.99, 'https://i.pinimg.com/564x/10/c8/9c/10c89cc9b988ad675136ecc009925800.jpg', '2022-08-26');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (16, 'DEXTER', 'PROTON', 'CASCO', 'Este casco integral cuenta con una estética increíble, un diseño compacto y cómodo, calota fabricada en EPS de múltiple densidad e incluye anti-vaho.', 620, 'https://i.pinimg.com/564x/6e/a2/51/6ea2511daf03e4b6d38dcfe5e05bd268.jpg', '2022-08-01');
 insert into producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (17, 'HJC', 'RPHA 70', 'CASCO', 'Este es el casco integral perfecto para el turismo deportivo, con un diseño súper deportivo pero con un enfoque de uso en tu vida cotidiana.', 450.95, 'https://i.pinimg.com/564x/18/8a/fd/188afdae6c49f16370066062ef2610ca.jpg', '2022-08-17');
@@ -33,8 +33,9 @@ insert into producto (id, marca, nombre, categoria, descripcion, precio_base, im
 INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (19, 'Alpinestars', 'Guantes SP-8 V2', 'ROPA', 'Guantes de moto de cuero con protecciones de nudillos y muñeca ajustable.', 150, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A21-BG102-B0-0L-21-glove-male-summer-Makalu-EU-Studio-001_Tablet.jpg', '2022-09-04');
 INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (20, 'yamaha', 'Guantes Enduro', 'ROPA' ,'Los guantes Enduro para hombre imprescindibles para las duras aventuras off-road ofrecen protección, ventilación y comodidad.', 99.99,'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A22-RG105-B4-0L-MX-Gloves-_Men_-EU-Studio-001_Tablet.jpg', '2022-09-03');
 INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (21, 'Dainese', 'Chaqueta Avro D2', 'ROPA', 'Chaqueta de moto de cuero con protecciones en codos y hombros y forro térmico desmontable.', 330, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A22-MT101-B0-0L-MT-Jacket-Hoodie-Aqua-EU-Studio-001_Tablet.jpg', '2022-09-02');
-INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (22, 'yamaha', 'Pantalón Sport Touring', 'EQUIPO', 'Pantalón 2 en 1 confeccionado con nailon fino combinado con softshell El pantalón se puede combinar con la chaqueta Sport Touring para tener un traje completo.', 340, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A20-BP102-B0-0L-20-male-pant-tour-CANBER-EU-Studio-001_Tablet.jpg', '2022-10-01');
+INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (22, 'yamaha', 'Pantalón Touring', 'EQUIPO', 'Pantalón 2 en 1 confeccionado con nailon fino combinado con softshell El pantalón se puede combinar con la chaqueta Sport Touring para tener un traje completo.', 340, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A20-BP102-B0-0L-20-male-pant-tour-CANBER-EU-Studio-001_Tablet.jpg', '2022-10-01');
 
+insert into motocicleta (id, peso, cilindrada) values (1, 200, 500);
 insert into motocicleta (id, peso, cilindrada) values (2, 230, 321);
 insert into motocicleta (id, peso, cilindrada) values (3, 208, 649);
 insert into motocicleta (id, peso, cilindrada) values (4, 218, 998);
@@ -57,5 +58,12 @@ insert into accesorio (id, caracteristicas) values (19, 'Sistema interior person
 insert into accesorio (id, caracteristicas) values (20, 'Calota interna de densidad múltiple que garantiza la seguridad, Cierre de anilla micrométrica para un ajuste rápido y fácil');
 insert into accesorio (id, caracteristicas) values (21, 'Guarda barbilla, deflector de respiración, juego de placas de mecanismo');
 insert into accesorio (id, caracteristicas) values (22, 'Calota multifibra AIM, Sistema EPS de absorción de impactos, Sistema de Bloqueo 360, Cierre de seguridad Micrométrico');
+
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (1, 1, 1, 11);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (2, 1, 1, 18);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (3, 1, 1, 20);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (4, 1, 2, 15);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (5, 2, 3, 21);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (6, 2, 3, 17);
 
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1050;

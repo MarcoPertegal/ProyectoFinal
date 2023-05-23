@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.salesianostriana.dam.concesionario.formbeans.SearchBean;
 import com.salesianostriana.dam.concesionario.model.Accesorio;
 import com.salesianostriana.dam.concesionario.service.AccesorioService;
+import com.salesianostriana.dam.concesionario.service.VentaService;
 
 @Controller
 @RequestMapping("/accesorio")
@@ -27,6 +28,9 @@ public class AccesorioController {
 	
 	@Autowired
 	private AccesorioService accesorioService;
+	
+	@Autowired
+	private VentaService ventaService;
 	
 	
 	@GetMapping("/")
@@ -42,7 +46,6 @@ public class AccesorioController {
 	  	return "accesorios-lista";
 	}
 	
-	//METODOS PARA ADMIN
 	@GetMapping("/admin")
 	public String listAccesorio(Model model) {
 		model.addAttribute("listaAccesorios", accesorioService.findAll());
@@ -81,10 +84,13 @@ public class AccesorioController {
 	    Accesorio accesorio = optionalAccesorio.get();
 	    
 	    if (optionalAccesorio.isPresent()) {
-	    	accesorioService.delete(accesorio);
+	    	if (ventaService.numeroDeProductoEnVenta(accesorio) == 0) {
+		        accesorioService.delete(accesorio);
+	    	} else {
+	    		return "redirect:/accesorio/admin/?error=true";
+	    	}
 	    }
-	    
 	    return "redirect:/accesorio/admin";
-	    
 	}
+	   
 }
