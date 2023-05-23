@@ -23,16 +23,14 @@
 						<tbody>
 							<tr th:each="element : ${productos.entrySet()}">
 								<td class="col-sm-8 col-md-6">
-											<img
-												src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png"
-												style="width: 150px;" th:src="${element.key.imagen}"/>	
+											<img style="width: 150px;" th:src="${element.key.imagen}"/>	
 								</td>
 								<td class="col-sm-1 col-md-2 col-lg-3">
 									<h3><span th:text="${element.key.nombre}">Product name</span></h3>
 								</td>
 								<td class="col-sm-1 col-md-1" style="text-align: center">
-									<input class="form-control" id="inputQuantity" value="3" th:value="${element.value}"
-										type="text" />
+									<input class="form-control" id="inputQuantity" value="3" 
+									th:value="${element.value}" type="text" />
 								</td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
 										th:text="${element.key.precioBase + '€'}"></strong></td>
@@ -53,13 +51,16 @@
 									<h3>Total</h3>
 								</td>
 								<td colspan="2" class="text-right">
-									<h4><strong th:text="${total_carrito + '€'}"></strong></h4>
+    								<h4>
+										<strong th:text="${#numbers.formatDecimal(total_carrito, 0, 2) + '€'}">
+										</strong>
+									</h4>
 								</td>
 								
 							</tr>
 							<tr>
-								<td>   </td>
-								<td >   </td>
+								<td>   	</td>
+								<td>   	</td>
 								<td>	</td>
 								<td colspan="2"> 
 									<button type="button" class="btn" onclick="window.history.go(-2);">Continuar Comprando</button> 

@@ -47,21 +47,18 @@ public class VentaController {
 	
 	@GetMapping ("/productoACarrito/{id}")
 	public String productoACarrito (@PathVariable("id") Long id, Model model) {
-	    	
 		ventaService.addProducto(productoService.findById(id));	 		 	
 		return "redirect:/carrito";
 	}
 	 
 	@GetMapping("/borrarProducto/{id}")
 	public String removeProductFromCart(@PathVariable("id") Long id) {
-	        
 		ventaService.removeProducto(productoService.findById(id));
 		return "redirect:/carrito";
 	}
 	 
 	@ModelAttribute("total_carrito")
-	public Double mostrartotalCarrito () {
-	    	
+	public Double mostrartotalCarrito () {   	
 		return ventaService.totalCarrito();
 	}
 	
@@ -89,7 +86,6 @@ public class VentaController {
 	    List<Venta> ventas = ventaService.findByFechaBetween(fechaInicio, fechaFin);
 	    model.addAttribute("listaVentas", ventas);
 	    
-
 	    double totalVentas = calcularTotalVentas(ventas);
 	    model.addAttribute("totalVentas", totalVentas);
 

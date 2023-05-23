@@ -30,15 +30,9 @@ public class Trabajador {
 	private String nombre, apellidos, dni, direccion, municipio, telefono;//preguntar si telefono es int o String pq en la base de datos es un char
 	private double sueldo;
 	
-	
-	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy="trabajador", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Venta> listaVentas = new ArrayList<>();
-	
-	
-	
-	
 }

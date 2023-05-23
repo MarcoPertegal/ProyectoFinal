@@ -38,7 +38,4 @@ public class TrabajadorService extends BaseServiceImpl<Trabajador, Long, Trabaja
 	    Optional<Trabajador> result = findById(t.getId());
 	    result.ifPresent(trabajador -> repositorio.delete(trabajador));
 	}
-	
-	
-	
 }

@@ -27,16 +27,17 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>Número de venta</th>
-							<th>Fecha</th>
-							<th>Total</th>
+							<th class="h4">Número de venta</th>
+							<th class="h4">Fecha</th>
+							<th class="h4">Total</th>
 						</tr>
 					</thead>
 					<tbody>
 					    <tr th:each="venta, row : ${listaVentas}">
 					        <td th:text="${row.index + 1}"></td>
 					        <td th:text="${venta.fecha}"></td>
-					        <td th:text="${venta.total + '€'}"></td>
+					        <td th:text="${#numbers.formatDecimal(venta.total, 0, 2) + '€'}"></td>
+					        
 					        <td>
 					            <table class="table">
 					                <thead>
@@ -58,13 +59,13 @@
 					    </tr>
 					    <tr>
 								<td>   </td>
-								<td>   </td>
-								<td> <h3>Total</h3>  </td>
-								<td>
-									<strong th:text="${totalVentas + '€'}"></strong>
+								<td><h3>Total</h3></td>
+								<td> <strong th:if="${totalVentas != null}" th:text="${#numbers.formatDecimal(totalVentas, 0, 2) + '€'}"></strong>
+								    <span th:if="${totalVentas == null}">Realice una búsqueda</span>  
 								</td>
+								<td> </td>
 
-								<td></td>
+								<td> </td>
 					</tbody>
 				</table>
 			</div>

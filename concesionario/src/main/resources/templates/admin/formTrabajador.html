@@ -23,20 +23,20 @@
                     name="apellidos" required="required" th:field="*{apellidos}" maxlength="35">
                 </div>
                 <div class="mb-3 mt-3">
-                    <input type="number" class="form-control" id="sueldo"  pattern="\d{1,5}" placeholder="Sueldo" 
+                    <input type="number" class="form-control" id="sueldo" placeholder="Sueldo" 
                     name="sueldo" required="required" th:field="*{sueldo}">
                 </div>
                 <div class="mb-3 mt-3">
-                    <input type="text" class="form-control" id="telefono" pattern="[0-9\s]{1,13}" placeholder="Teléfono" 
-                    name="telefono" th:field="*{telefono}">
+                    <input type="text" class="form-control" id="telefono" placeholder="Teléfono" 
+                    name="telefono" required="required" th:field="*{telefono}">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="dni" maxlength="10" placeholder="Dni"
-                     name="dni" th:field="*{dni}">
+                     name="dni" required="required" th:field="*{dni}">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="direccion" placeholder="Dirección" 
-                    name="direccion" th:field="*{direccion}">
+                    name="direccion" required="required" th:field="*{direccion}">
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="text" class="form-control" id="municipio" placeholder="Municipio" 

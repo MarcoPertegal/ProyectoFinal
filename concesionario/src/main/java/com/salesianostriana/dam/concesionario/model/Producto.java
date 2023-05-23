@@ -45,11 +45,8 @@ public class Producto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate alta;
 	
-	
-	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy="producto", fetch = FetchType.EAGER)
 	private List<LineaVenta> listaLineaVenta = new ArrayList<>();
-	
 }

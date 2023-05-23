@@ -46,9 +46,6 @@ public class Cliente implements UserDetails {
 	@Builder.Default
 	private List<Venta> listaVentas = new ArrayList<>();
 	
-	
-	
-	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		String role = "ROLE_";

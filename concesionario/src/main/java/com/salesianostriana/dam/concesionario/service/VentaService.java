@@ -14,14 +14,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.salesianostriana.dam.concesionario.model.Accesorio;
 import com.salesianostriana.dam.concesionario.model.Cliente;
 import com.salesianostriana.dam.concesionario.model.LineaVenta;
-import com.salesianostriana.dam.concesionario.model.Motocicleta;
 import com.salesianostriana.dam.concesionario.model.Producto;
 import com.salesianostriana.dam.concesionario.model.Trabajador;
 import com.salesianostriana.dam.concesionario.model.Venta;
-import com.salesianostriana.dam.concesionario.repository.ProductoRepository;
 import com.salesianostriana.dam.concesionario.repository.VentaRepository;
 import com.salesianostriana.dam.concesionario.service.base.BaseServiceImpl;
 
@@ -32,18 +29,14 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	@Autowired
 	private VentaRepository repositorio;
 	
-	@Autowired
-	private ProductoRepository productoRepository;
-	
 	private Map<Producto, Integer> listaLineaVentas = new HashMap <>();
-	
-	@Autowired
-	public VentaService (ProductoRepository productorepository) {
-		this.productoRepository=productorepository;
-	}
 
 	public int numeroVentasTrabajador(Trabajador trabajador) {
 		return repositorio.findNumTrabajadoresByVenta(trabajador);
+	}
+	
+	public int numeroDeProductoEnVenta(Producto producto) {
+		return repositorio.countAparicionesProductosEnLineaVenta(producto);
 	}
 	
 	public void addProducto(Optional<Producto> producto) {
@@ -71,24 +64,6 @@ public class VentaService extends BaseServiceImpl<Venta, Long, VentaRepository>{
 	public Map<Producto, Integer> getProductsInCart() {
         return Collections.unmodifiableMap(listaLineaVentas);
     }
-	
-	/*
-	public Double totalCarrito () {
-		Map <Producto,Integer> carrito=getProductsInCart();
-	    double total=0.0;
-	    double porcentDescuento = 15;
-	    double topeDescuento = 20000;
-	    if (carrito !=null) {
-	        for (Producto p: carrito.keySet()) {
-	        	total+=p.getPrecioBase()*carrito.get(p);
-	        }
-	        if (total > topeDescuento) {
-				total -= (total/100)*porcentDescuento;
-			}
-	        return total;
-	    }
-	    return 0.0;
-	}*/
 	
 	public Double totalCarrito () {
 		Map <Producto,Integer> carrito=getProductsInCart();

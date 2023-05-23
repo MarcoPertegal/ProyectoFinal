@@ -3,12 +3,12 @@ insert into cliente (id, nombre, apellidos, email, telefono, password, direccion
 insert into cliente (id, nombre, apellidos, email, telefono, password, direccion, municipio, dni, username, admin) values (3,'Roberto', 'Pérez Sobrino', 'roberto@gmail.com', '673442354','{bcrypt}$2a$10$G61/w8Ut8/GJkoSeCb.e.etANS3zZYfaSJjJItlizU2QA.bf36pwK', 'Avenida de la Constitución', 'Sevilla', '49456784C', 'user',false);
 
 
-insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '70949233M', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
-insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '15340247M', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
+insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (1, 3893, '78464492S', 'Calle de la Estrella', 'Juan', 'Gómez Franco', '602 34 92 01', ' Loja');
+insert into trabajador (id, sueldo, dni, direccion, nombre, apellidos, telefono, municipio) values (2, 1491, '95754388Y', 'Calle del Mar', 'Rocío', 'Blanco González', '622 68 34 42', ' Almeria');
 
 
 
-insert into venta (id, fecha, total, cliente_id, trabajador_id) values (1, '2021-02-12', 20400, 2, 1);
+insert into venta (id, fecha, total, cliente_id, trabajador_id) values (1, '2021-02-12', 8250, 2, 1);
 insert into venta (id, fecha, total, cliente_id, trabajador_id) values (2, '2023-04-10', 530.99, 3, 1);
 insert into venta (id, fecha, total, cliente_id, trabajador_id) values (3, '2023-08-29', 1110.95, 3, 2);
 
@@ -35,6 +35,7 @@ INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, im
 INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (21, 'Dainese', 'Chaqueta Avro D2', 'ROPA', 'Chaqueta de moto de cuero con protecciones en codos y hombros y forro térmico desmontable.', 330, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A22-MT101-B0-0L-MT-Jacket-Hoodie-Aqua-EU-Studio-001_Tablet.jpg', '2022-09-02');
 INSERT INTO producto (id, marca, nombre, categoria, descripcion, precio_base, imagen, alta) values (22, 'yamaha', 'Pantalón Touring', 'EQUIPO', 'Pantalón 2 en 1 confeccionado con nailon fino combinado con softshell El pantalón se puede combinar con la chaqueta Sport Touring para tener un traje completo.', 340, 'https://cdn2.yamaha-motor.eu/prod/accessories/ROAD-GEAR/Road-gear/A20-BP102-B0-0L-20-male-pant-tour-CANBER-EU-Studio-001_Tablet.jpg', '2022-10-01');
 
+insert into motocicleta (id, peso, cilindrada) values (1, 200, 500);
 insert into motocicleta (id, peso, cilindrada) values (2, 230, 321);
 insert into motocicleta (id, peso, cilindrada) values (3, 208, 649);
 insert into motocicleta (id, peso, cilindrada) values (4, 218, 998);
@@ -58,7 +59,7 @@ insert into accesorio (id, caracteristicas) values (20, 'Calota interna de densi
 insert into accesorio (id, caracteristicas) values (21, 'Guarda barbilla, deflector de respiración, juego de placas de mecanismo');
 insert into accesorio (id, caracteristicas) values (22, 'Calota multifibra AIM, Sistema EPS de absorción de impactos, Sistema de Bloqueo 360, Cierre de seguridad Micrométrico');
 
-insert into linea_venta(id, cantidad, venta_id, producto_id) values (1, 1, 1, 1);
+insert into linea_venta(id, cantidad, venta_id, producto_id) values (1, 1, 1, 11);
 insert into linea_venta(id, cantidad, venta_id, producto_id) values (2, 1, 1, 18);
 insert into linea_venta(id, cantidad, venta_id, producto_id) values (3, 1, 1, 20);
 insert into linea_venta(id, cantidad, venta_id, producto_id) values (4, 1, 2, 15);
