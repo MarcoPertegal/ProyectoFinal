@@ -88,6 +88,7 @@ public class VentaController {
 
 	    List<Venta> ventas = ventaService.findByFechaBetween(fechaInicio, fechaFin);
 	    model.addAttribute("listaVentas", ventas);
+	    
 
 	    double totalVentas = calcularTotalVentas(ventas);
 	    model.addAttribute("totalVentas", totalVentas);
@@ -95,6 +96,7 @@ public class VentaController {
 	    return "admin/listVenta";
 	}
 	
+
 	private double calcularTotalVentas(List<Venta> ventas) {
 	    double total = 0.0;
 	    for (Venta venta : ventas) {

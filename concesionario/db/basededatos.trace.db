@@ -6840,3 +6840,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/34609/O
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 55 more
+2023-05-23 10:06:45 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]SEVENTA LECT * FROM LINEA_VENTA"; se esperaba "SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"
+Syntax error in SQL statement "[*]SEVENTA LECT * FROM LINEA_VENTA"; expected "SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+SEVENTA LECT * FROM LINEA_VENTA [42001-214]

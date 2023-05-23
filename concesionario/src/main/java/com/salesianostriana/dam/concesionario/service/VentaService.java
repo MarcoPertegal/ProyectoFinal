@@ -14,8 +14,10 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.salesianostriana.dam.concesionario.model.Accesorio;
 import com.salesianostriana.dam.concesionario.model.Cliente;
 import com.salesianostriana.dam.concesionario.model.LineaVenta;
+import com.salesianostriana.dam.concesionario.model.Motocicleta;
 import com.salesianostriana.dam.concesionario.model.Producto;
 import com.salesianostriana.dam.concesionario.model.Trabajador;
 import com.salesianostriana.dam.concesionario.model.Venta;

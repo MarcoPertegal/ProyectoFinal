@@ -11,10 +11,10 @@
 			    <ul class="nav nav-sidebar mt-3">
 				    <div class="d-flex mt-4">
 				        <form action="/admin/venta/search" th:action="@{/admin/venta/search}" method="POST">
-				            <label for="fechaInicio">Fecha inicio:</label>
+				            <label for="fechaInicio">Fecha inicio:</label><br>
 				            <input type="date" id="fechaInicio" name="fechaInicio" placeholder="Fecha inicio" th:value="${searchForm.fechaInicio}" />
 				            <br><br>
-				            <label for="fechaFin">Fecha fin:</label>
+				            <label for="fechaFin">Fecha fin:</label><br>
 				            <input type="date" id="fechaFin" name="fechaFin" placeholder="Fecha fin" th:value="${searchForm.fechaFin}" />
 				            <br><br>
 				            <button class="btn" type="submit">Buscar</button>
@@ -36,9 +36,9 @@
 					    <tr th:each="venta, row : ${listaVentas}">
 					        <td th:text="${row.index + 1}"></td>
 					        <td th:text="${venta.fecha}"></td>
-					        <td th:text="${venta.total}"></td>
+					        <td th:text="${venta.total + '€'}"></td>
 					        <td>
-					            <table>
+					            <table class="table">
 					                <thead>
 					                    <tr>
 					                        <th>Producto</th>
@@ -50,7 +50,7 @@
 					                    <tr th:each="lineaVenta : ${venta.listaLineaVenta}">
 					                        <td th:text="${lineaVenta.producto.nombre}"></td>
 					                        <td th:text="${lineaVenta.cantidad}"></td>
-					                        <td th:text="${lineaVenta.producto.precioBase}"></td>
+					                        <td th:text="${lineaVenta.producto.precioBase + '€'}"></td>
 					                    </tr>
 					                </tbody>
 					            </table>
@@ -59,12 +59,12 @@
 					    <tr>
 								<td>   </td>
 								<td>   </td>
-								<td>   </td>
+								<td> <h3>Total</h3>  </td>
 								<td>
-									<h3>Total</h3>
+									<strong th:text="${totalVentas + '€'}"></strong>
 								</td>
-								<td class="col-sm-1 col-md-1 text-center"><strong th:text="${totalVentas}"></strong></td>	
-						</tr>
+
+								<td></td>
 					</tbody>
 				</table>
 			</div>
